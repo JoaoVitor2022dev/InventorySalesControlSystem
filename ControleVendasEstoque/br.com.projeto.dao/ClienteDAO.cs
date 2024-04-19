@@ -1,27 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ControleVendasEstoque.br.com.projeto.conexao;
+using ControleVendasEstoque.br.com.projeto.model;
+using MySql.Data.MySqlClient;
+using System;
+using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.dao
 {
     internal class ClienteDAO
     {
+        private MySqlConnection conexao; 
+        public ClienteDAO() 
+        {
+            this.conexao = new ConnectionFactory().GetConnection();
+        }
+
         #region Cadastrar cliente 
-        public void CadastrarCliente()
+        public void CadastrarCliente(Cliente obj)
         {
             try 
             {
+                // 1 - Definir o CMD sql - insert into
+                string sql = @"INSERT INTO tb_clientes (nome, rg, cpf, email, telefone, celular, cep, endereco, numero, complemento, bairro, cidade, estado) 
+                  VALUES (@nome, @rg, @cpf, @email, @telefone, @celular, @cep, @endereco, @numero, @complemento , @bairro, @cidade, @estado);";
+
+                // 2 -  Organizar o comando sql     
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", obj.name);
+                executacmd.Parameters.AddWithValue("@rg", obj.rg);
+                executacmd.Parameters.AddWithValue("@cpf", obj.cpf);
+                executacmd.Parameters.AddWithValue("@email", obj.email);
+                executacmd.Parameters.AddWithValue("@telefone", obj.telefone);
+                executacmd.Parameters.AddWithValue("@celular", obj.celular);
+                executacmd.Parameters.AddWithValue("@cep", obj.cep);
+                executacmd.Parameters.AddWithValue("@endereco", obj.endereco);
+                executacmd.Parameters.AddWithValue("@numero", obj.numero);
+                executacmd.Parameters.AddWithValue("@complemento", obj.complemento);
+                executacmd.Parameters.AddWithValue("@bairro", obj.bairro);
+                executacmd.Parameters.AddWithValue("@cidade", obj.cidade);
+                executacmd.Parameters.AddWithValue("@estado", obj.estado);
+
+                // 3 - executar o comando sql 
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Cliente cadastrado com sucesso!");
+
             }
             catch (Exception erro)
             {
-            
+
+                MessageBox.Show("Ocorreu um error: " + erro);
             }
         }
         #endregion
-
-
 
         // alterar cliente 
 
