@@ -43,7 +43,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtbairro = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtcomplementos = new System.Windows.Forms.TextBox();
+            this.txtcomplemento = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtnumero = new System.Windows.Forms.TextBox();
@@ -174,7 +174,7 @@
             this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.txtbairro);
             this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.txtcomplementos);
+            this.tabPage1.Controls.Add(this.txtcomplemento);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.txtnumero);
@@ -289,13 +289,14 @@
             this.label15.TabIndex = 24;
             this.label15.Text = "Bairro:";
             // 
-            // txtcomplementos
+            // txtcomplemento
             // 
-            this.txtcomplementos.BackColor = System.Drawing.SystemColors.Info;
-            this.txtcomplementos.Location = new System.Drawing.Point(152, 243);
-            this.txtcomplementos.Name = "txtcomplementos";
-            this.txtcomplementos.Size = new System.Drawing.Size(225, 27);
-            this.txtcomplementos.TabIndex = 23;
+            this.txtcomplemento.BackColor = System.Drawing.SystemColors.Info;
+            this.txtcomplemento.Location = new System.Drawing.Point(152, 243);
+            this.txtcomplemento.Name = "txtcomplemento";
+            this.txtcomplemento.Size = new System.Drawing.Size(225, 27);
+            this.txtcomplemento.TabIndex = 23;
+            this.txtcomplemento.TextChanged += new System.EventHandler(this.txtcomplementos_TextChanged);
             // 
             // label14
             // 
@@ -361,6 +362,7 @@
             this.txtcep.Name = "txtcep";
             this.txtcep.Size = new System.Drawing.Size(110, 27);
             this.txtcep.TabIndex = 16;
+            this.txtcep.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtcep_MaskInputRejected);
             // 
             // label10
             // 
@@ -546,6 +548,7 @@
             this.btndeletar.TabIndex = 4;
             this.btndeletar.Text = "Deletar";
             this.btndeletar.UseVisualStyleBackColor = false;
+            this.btndeletar.Click += new System.EventHandler(this.btndeletar_Click);
             // 
             // txteditar
             // 
@@ -557,6 +560,7 @@
             this.txteditar.TabIndex = 5;
             this.txteditar.Text = "Editar";
             this.txteditar.UseVisualStyleBackColor = false;
+            this.txteditar.Click += new System.EventHandler(this.txteditar_Click);
             // 
             // Frmclientes
             // 
@@ -614,7 +618,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.MaskedTextBox txtcep;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtcomplementos;
+        private System.Windows.Forms.TextBox txtcomplemento;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label16;

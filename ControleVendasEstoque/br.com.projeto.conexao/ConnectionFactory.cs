@@ -13,7 +13,7 @@ namespace ControleVendasEstoque.br.com.projeto.conexao
       public MySqlConnection GetConnection() 
       {
 
-            String conecxao = ConfigurationManager.ConnectionStrings["dbvendas"].ConnectionString;
+            String conecxao = ConfigurationManager.ConnectionStrings["bdvendas"].ConnectionString;
 
             return new MySqlConnection(conecxao);
       }
