@@ -2,6 +2,7 @@
 using ControleVendasEstoque.br.com.projeto.model;
 using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.dao
@@ -59,9 +60,36 @@ namespace ControleVendasEstoque.br.com.projeto.dao
 
         // excluir cliente 
 
-
         //  listra cliente 
 
+        #region ListarClientes
+        public DataTable listarClientes()
+        {
+            try
+            {
+                // 1 - passo é criar um datatable com sql 
+                DataTable tabelaCliente = new DataTable();
+                string sql = "SELECT * FROM tb_clientes;";
+
+                // 2 - organizar o comando sql no executar 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 3 - passo - criar MysqDataApter para preencher os dados no datatable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(tabelaCliente);
+
+                return tabelaCliente; 
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show("Error ao executar o comando sql: " + error);
+                return null; 
+            }
+        }
+        #endregion
         // buscar cliente por cpf 
     }
 }

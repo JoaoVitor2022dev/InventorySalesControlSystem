@@ -124,6 +124,7 @@
             this.TabelaCliente.ReadOnly = true;
             this.TabelaCliente.Size = new System.Drawing.Size(943, 275);
             this.TabelaCliente.TabIndex = 6;
+            this.TabelaCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaCliente_CellContentClick);
             // 
             // txtpesquisar
             // 
@@ -242,6 +243,7 @@
             this.txtuf.Name = "txtuf";
             this.txtuf.Size = new System.Drawing.Size(154, 29);
             this.txtuf.TabIndex = 30;
+            this.txtuf.SelectedIndexChanged += new System.EventHandler(this.txtuf_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -578,6 +580,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Frmclientes";
             this.Text = "Cadastro de Clientes";
+            this.Load += new System.EventHandler(this.Frmclientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabC.ResumeLayout(false);

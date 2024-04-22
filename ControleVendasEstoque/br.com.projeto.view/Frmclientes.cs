@@ -1,6 +1,7 @@
 ﻿using ControleVendasEstoque.br.com.projeto.dao;
 using ControleVendasEstoque.br.com.projeto.model;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.view
@@ -39,7 +40,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
         private void btnsalvar_Click(object sender, EventArgs e)
         {
-
             Cliente obj = new Cliente();
 
             obj.name = txtnome.Text;
@@ -57,10 +57,21 @@ namespace ControleVendasEstoque.br.com.projeto.view
             obj.estado = txtuf.Text;
 
             ClienteDAO dao = new ClienteDAO();
-            dao.CadastrarCliente(obj); 
+            dao.CadastrarCliente(obj);
 
-
-
+            txtnome.Clear();
+            txtrg.Clear();
+            txtcpf.Clear();
+            txtemail.Clear();
+            txttelefone.Clear();
+            txtcelular.Clear();
+            txtcep.Clear();
+            txtendereco.Clear();
+            txtnumero.Clear();
+            txtcomplemento.Clear();
+            txtbairro.Clear();
+            txtcidade.Clear(); 
+            txtuf.SelectedIndex = -1; 
         }
 
         private void btndeletar_Click(object sender, EventArgs e)
@@ -81,6 +92,23 @@ namespace ControleVendasEstoque.br.com.projeto.view
         private void txtcomplementos_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtuf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabelaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Frmclientes_Load(object sender, EventArgs e)
+        {
+            TabelaCliente.DefaultCellStyle.ForeColor = Color.Black; 
+            ClienteDAO dao = new ClienteDAO();
+            TabelaCliente.DataSource = dao.listarClientes();
         }
     }
 }
