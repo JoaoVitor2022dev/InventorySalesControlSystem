@@ -55,12 +55,74 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         }
         #endregion
 
-        // alterar cliente 
+        #region AlterarCliente
+        public void AlterarCliente(Cliente obj)
+        {
+            try
+            {
+                // 1 - Definir o CMD sql - insert into
+                string sql = @"update tb_clientes set nome=@nome, rg=@rg, cpf=@cpf, email=@email, telefone=@telefone, celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado) 
+                  VALUES (@nome, @rg, @cpf, @email, @telefone, @celular, @cep, @endereco, @numero, @complemento , @bairro, @cidade, @estado;
+                  where  id=@id  ";
 
+                // 2 -  Organizar o comando sql     
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", obj.name);
+                executacmd.Parameters.AddWithValue("@rg", obj.rg);
+                executacmd.Parameters.AddWithValue("@cpf", obj.cpf);
+                executacmd.Parameters.AddWithValue("@email", obj.email);
+                executacmd.Parameters.AddWithValue("@telefone", obj.telefone);
+                executacmd.Parameters.AddWithValue("@celular", obj.celular);
+                executacmd.Parameters.AddWithValue("@cep", obj.cep);
+                executacmd.Parameters.AddWithValue("@endereco", obj.endereco);
+                executacmd.Parameters.AddWithValue("@numero", obj.numero);
+                executacmd.Parameters.AddWithValue("@complemento", obj.complemento);
+                executacmd.Parameters.AddWithValue("@bairro", obj.bairro);
+                executacmd.Parameters.AddWithValue("@cidade", obj.cidade);
+                executacmd.Parameters.AddWithValue("@estado", obj.estado);
+                executacmd.Parameters.AddWithValue("@id", obj.codigo);
 
-        // excluir cliente 
+                // 3 - executar o comando sql 
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
 
-        //  listra cliente 
+                MessageBox.Show("Cliente Alterado com Sucesso!");
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Ocorreu um error: " + erro);
+            }
+        }
+        #endregion
+
+        #region ExcluirCliente
+        public void ExcluirCliente(Cliente obj)
+        {
+            try
+            {
+                // 1 - Definir o CMD sql - insert into
+                string sql = @"delete from tb_clientes where id = @id"; 
+
+                // 2 -  Organizar o comando sql     
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", obj.codigo);
+
+                // 3 - executar o comando sql 
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Cliente Alterado com Sucesso!");
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Ocorreu um error: " + erro);
+            }
+        }
+        #endregion
 
         #region ListarClientes
         public DataTable listarClientes()
@@ -90,6 +152,8 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             }
         }
         #endregion
+
+
         // buscar cliente por cpf 
     }
 }
