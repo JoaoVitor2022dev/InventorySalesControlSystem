@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabC = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.TabelaCliente = new System.Windows.Forms.DataGridView();
             this.txtpesquisar = new System.Windows.Forms.Button();
             this.txtconsulta = new System.Windows.Forms.TextBox();
@@ -72,7 +72,7 @@
             this.btndeletar = new System.Windows.Forms.Button();
             this.txteditar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.tabC.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabelaCliente)).BeginInit();
             this.tabClientes.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -100,19 +100,19 @@
             this.label1.Text = "Cadastro de cliente";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // tabC
+            // tabPage2
             // 
-            this.tabC.Controls.Add(this.TabelaCliente);
-            this.tabC.Controls.Add(this.txtpesquisar);
-            this.tabC.Controls.Add(this.txtconsulta);
-            this.tabC.Controls.Add(this.label18);
-            this.tabC.Location = new System.Drawing.Point(4, 30);
-            this.tabC.Name = "tabC";
-            this.tabC.Padding = new System.Windows.Forms.Padding(3);
-            this.tabC.Size = new System.Drawing.Size(961, 363);
-            this.tabC.TabIndex = 1;
-            this.tabC.Text = "Consulta";
-            this.tabC.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.TabelaCliente);
+            this.tabPage2.Controls.Add(this.txtpesquisar);
+            this.tabPage2.Controls.Add(this.txtconsulta);
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(961, 363);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Consulta";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // TabelaCliente
             // 
@@ -159,7 +159,7 @@
             // tabClientes
             // 
             this.tabClientes.Controls.Add(this.tabPage1);
-            this.tabClientes.Controls.Add(this.tabC);
+            this.tabClientes.Controls.Add(this.tabPage2);
             this.tabClientes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabClientes.Location = new System.Drawing.Point(2, 158);
             this.tabClientes.Name = "tabClientes";
@@ -583,8 +583,8 @@
             this.Load += new System.EventHandler(this.Frmclientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabC.ResumeLayout(false);
-            this.tabC.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabelaCliente)).EndInit();
             this.tabClientes.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -597,7 +597,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabC;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabControl tabClientes;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label3;
