@@ -45,7 +45,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                 executacmd.ExecuteNonQuery();
 
                 MessageBox.Show("Cliente cadastrado com sucesso!");
-
+                conexao.Close();
             }
             catch (Exception erro)
             {
@@ -86,8 +86,8 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Cliente Alterado com Sucesso!");
-
+                MessageBox.Show("Cliente Modificado com Sucesso!");
+                conexao.Close();
             }
             catch (Exception erro)
             {
@@ -113,12 +113,12 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Cliente Alterado com Sucesso!");
 
+                MessageBox.Show("Cliente Alterado com Sucesso!");
+                conexao.Close();
             }
             catch (Exception erro)
             {
-
                 MessageBox.Show("Ocorreu um error: " + erro);
             }
         }

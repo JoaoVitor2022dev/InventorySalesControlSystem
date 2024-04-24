@@ -59,6 +59,11 @@ namespace ControleVendasEstoque.br.com.projeto.view
             ClienteDAO dao = new ClienteDAO();
             dao.CadastrarCliente(obj);
 
+            tabClientes.SelectedTab = tabPage2;
+
+            // atualizar os dados do banco de dados 
+            TabelaCliente.DataSource = dao.listarClientes();
+
             txtnome.Clear();
             txtrg.Clear();
             txtcpf.Clear();
@@ -76,12 +81,78 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
         private void btndeletar_Click(object sender, EventArgs e)
         {
+            // deletar cliente 
 
+            Cliente obj = new Cliente();
+
+            // pegar o codigo 
+            obj.codigo = int.Parse(txtcodigo.Text);
+
+            ClienteDAO dao = new ClienteDAO(); 
+
+            dao.ExcluirCliente(obj);
+
+            // atualizar os dados do banco de dados 
+            TabelaCliente.DataSource = dao.listarClientes();
+
+            tabClientes.SelectedTab = tabPage2;
+
+            txtcodigo.Clear();
+            txtnome.Clear();
+            txtrg.Clear();
+            txtcpf.Clear();
+            txtemail.Clear();
+            txttelefone.Clear();
+            txtcelular.Clear();
+            txtcep.Clear();
+            txtendereco.Clear();
+            txtnumero.Clear();
+            txtcomplemento.Clear();
+            txtbairro.Clear();
+            txtcidade.Clear();
+            txtuf.SelectedIndex = -1;
         }
 
         private void txteditar_Click(object sender, EventArgs e)
         {
+            Cliente obj = new Cliente();
 
+            obj.name = txtnome.Text;
+            obj.rg = txtrg.Text;
+            obj.cpf = txtcpf.Text;
+            obj.email = txtemail.Text;
+            obj.telefone = txttelefone.Text;
+            obj.celular = txtcelular.Text;
+            obj.cep = txtcep.Text;
+            obj.endereco = txtendereco.Text;
+            obj.numero = int.Parse(txtnumero.Text);
+            obj.complemento = txtcomplemento.Text;
+            obj.bairro = txtbairro.Text;
+            obj.cidade = txtcidade.Text;
+            obj.estado = txtuf.Text;
+            obj.codigo = int.Parse(txtcodigo.Text);
+
+            ClienteDAO dao = new ClienteDAO();
+            dao.CadastrarCliente(obj);
+
+            tabClientes.SelectedTab = tabPage2;
+
+            // atualizar os dados do banco de dados 
+            TabelaCliente.DataSource = dao.listarClientes();
+
+            txtnome.Clear();
+            txtrg.Clear();
+            txtcpf.Clear();
+            txtemail.Clear();
+            txttelefone.Clear();
+            txtcelular.Clear();
+            txtcep.Clear();
+            txtendereco.Clear();
+            txtnumero.Clear();
+            txtcomplemento.Clear();
+            txtbairro.Clear();
+            txtcidade.Clear();
+            txtuf.SelectedIndex = -1;
         }
 
         private void txtcep_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -108,8 +179,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
         private void TabelaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // pegar dados da linha selecionada 
-
             txtcodigo.Text = TabelaCliente.CurrentRow.Cells[0].Value.ToString();
             txtnome.Text = TabelaCliente.CurrentRow.Cells[1].Value.ToString();
             txtrg.Text = TabelaCliente.CurrentRow.Cells[2].Value.ToString();
@@ -125,9 +194,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
             txtendereco.Text = TabelaCliente.CurrentRow.Cells[12].Value.ToString();
             txtuf.Text = TabelaCliente.CurrentRow.Cells[13].Value.ToString();
 
-
             tabClientes.SelectedTab = tabPage1; 
-
         }
     }
 }
