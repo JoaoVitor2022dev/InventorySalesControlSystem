@@ -141,6 +141,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                 // 3 - passo - criar MysqDataApter para preencher os dados no datatable
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
                 dataAdapter.Fill(tabelaCliente);
+                conexao.Close();
 
                 return tabelaCliente; 
             }
@@ -153,7 +154,70 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         }
         #endregion
 
+        #region BuscarClientePorNome
+        public DataTable BuscarClientePorNome(string nome )  
+        {
+            try
+            {
+                // 1 - passo é criar um datatable com sql 
+                DataTable tabelaCliente = new DataTable();
+                string sql = "SELECT * FROM tb_clientes WHERE nome = @nome;";
 
-        // buscar cliente por cpf 
+                // 2 - organizar o comando sql no executar 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                    executacmd.Parameters.AddWithValue("@nome", nome); 
+
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 3 - passo - criar MysqDataApter para preencher os dados no datatable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(tabelaCliente);
+                conexao.Close();
+
+                return tabelaCliente;
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show("Error ao executar o comando sql: " + error);
+                return null;
+            }
+        }
+        #endregion
+
+        #region ListarClientePorNome
+        public DataTable ListarClientePorNome(string nome)
+        {
+            try
+            {
+                // 1 - passo é criar um datatable com sql 
+                DataTable tabelaCliente = new DataTable();
+                string sql = "SELECT * FROM tb_clientes WHERE nome LIKE @nome;";
+
+                // 2 - organizar o comando sql no executar 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", nome);
+
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 3 - passo - criar MysqDataApter para preencher os dados no datatable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(tabelaCliente);
+                conexao.Close();
+
+                return tabelaCliente;
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show("Error ao executar o comando sql: " + error);
+                return null;
+            }
+        }
+        #endregion
     }
 }

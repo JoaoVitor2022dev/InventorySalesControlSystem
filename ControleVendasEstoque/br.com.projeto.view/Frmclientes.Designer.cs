@@ -136,6 +136,7 @@
             this.txtpesquisar.TabIndex = 5;
             this.txtpesquisar.Text = "Pesquisar";
             this.txtpesquisar.UseVisualStyleBackColor = false;
+            this.txtpesquisar.Click += new System.EventHandler(this.txtpesquisar_Click);
             // 
             // txtconsulta
             // 
@@ -144,6 +145,7 @@
             this.txtconsulta.Name = "txtconsulta";
             this.txtconsulta.Size = new System.Drawing.Size(291, 27);
             this.txtconsulta.TabIndex = 4;
+            this.txtconsulta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtconsulta_KeyPress);
             // 
             // label18
             // 
@@ -206,6 +208,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // txtuf
             // 

@@ -182,19 +182,47 @@ namespace ControleVendasEstoque.br.com.projeto.view
             txtcodigo.Text = TabelaCliente.CurrentRow.Cells[0].Value.ToString();
             txtnome.Text = TabelaCliente.CurrentRow.Cells[1].Value.ToString();
             txtrg.Text = TabelaCliente.CurrentRow.Cells[2].Value.ToString();
-            txtemail.Text = TabelaCliente.CurrentRow.Cells[3].Value.ToString();
-            txttelefone.Text = TabelaCliente.CurrentRow.Cells[4].Value.ToString();
-            txtcelular.Text = TabelaCliente.CurrentRow.Cells[5].Value.ToString();
-            txtcep.Text = TabelaCliente.CurrentRow.Cells[6].Value.ToString();
-            txtendereco.Text = TabelaCliente.CurrentRow.Cells[7].Value.ToString();
-            txtnumero.Text = TabelaCliente.CurrentRow.Cells[8].Value.ToString();
-            txtcomplemento.Text = TabelaCliente.CurrentRow.Cells[9].Value.ToString();
-            txtbairro.Text = TabelaCliente.CurrentRow.Cells[10].Value.ToString();
-            txtcidade.Text = TabelaCliente.CurrentRow.Cells[11].Value.ToString();
-            txtendereco.Text = TabelaCliente.CurrentRow.Cells[12].Value.ToString();
+            txtcpf.Text = TabelaCliente.CurrentRow.Cells[3].Value.ToString();
+            txtemail.Text = TabelaCliente.CurrentRow.Cells[4].Value.ToString();
+            txttelefone.Text = TabelaCliente.CurrentRow.Cells[5].Value.ToString();
+            txtcelular.Text = TabelaCliente.CurrentRow.Cells[6].Value.ToString();
+            txtcep.Text = TabelaCliente.CurrentRow.Cells[7].Value.ToString();
+            txtendereco.Text = TabelaCliente.CurrentRow.Cells[8].Value.ToString();
+            txtnumero.Text = TabelaCliente.CurrentRow.Cells[9].Value.ToString();
+            txtcomplemento.Text = TabelaCliente.CurrentRow.Cells[10].Value.ToString();
+            txtbairro.Text = TabelaCliente.CurrentRow.Cells[11].Value.ToString();
+            txtcidade.Text = TabelaCliente.CurrentRow.Cells[12].Value.ToString();
             txtuf.Text = TabelaCliente.CurrentRow.Cells[13].Value.ToString();
 
             tabClientes.SelectedTab = tabPage1; 
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtpesquisar_Click(object sender, EventArgs e)
+        {
+            string nome = txtconsulta.Text;
+
+            ClienteDAO dao = new ClienteDAO();
+
+            TabelaCliente.DataSource = dao.BuscarClientePorNome(nome);
+
+            if (TabelaCliente.Rows.Count == 0)
+            {
+                TabelaCliente.DataSource = dao.listarClientes();
+            }
+        }
+
+        private void txtconsulta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string nome = "%" + txtconsulta.Text + "%";
+
+            ClienteDAO dao = new ClienteDAO();
+
+            TabelaCliente.DataSource = dao.ListarClientePorNome(nome);
         }
     }
 }
