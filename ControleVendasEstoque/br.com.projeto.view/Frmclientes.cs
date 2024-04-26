@@ -1,6 +1,7 @@
 ﻿using ControleVendasEstoque.br.com.projeto.dao;
 using ControleVendasEstoque.br.com.projeto.model;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -223,6 +224,35 @@ namespace ControleVendasEstoque.br.com.projeto.view
             ClienteDAO dao = new ClienteDAO();
 
             TabelaCliente.DataSource = dao.ListarClientePorNome(nome);
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cep = txtcep.Text;
+
+                string xml = "https://viacep.com.br/ws/" + cep + "/xml/"; 
+
+                DataSet dados = new DataSet();  
+
+                dados.ReadXml(xml);
+
+                txtendereco.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
+                txtbairro.Text = dados.Tables[0].Rows[0]["bairro"].ToString();
+                txtcidade.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
+                txtuf.Text = dados.Tables[0].Rows[0]["uf"].ToString();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Endereço não encontrado, por favor digite manualmente."); 
+            }
+        }
+
+        private void txtendereco_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

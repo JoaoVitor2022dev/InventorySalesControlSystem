@@ -71,6 +71,7 @@
             this.btnsalvar = new System.Windows.Forms.Button();
             this.btndeletar = new System.Windows.Forms.Button();
             this.txteditar = new System.Windows.Forms.Button();
+            this.btnbuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabelaCliente)).BeginInit();
@@ -171,6 +172,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnbuscar);
             this.tabPage1.Controls.Add(this.txtuf);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.txtcidade);
@@ -348,6 +350,7 @@
             this.txtendereco.Name = "txtendereco";
             this.txtendereco.Size = new System.Drawing.Size(299, 27);
             this.txtendereco.TabIndex = 18;
+            this.txtendereco.TextChanged += new System.EventHandler(this.txtendereco_TextChanged);
             // 
             // label11
             // 
@@ -420,7 +423,7 @@
             // txtcpf
             // 
             this.txtcpf.BackColor = System.Drawing.SystemColors.Info;
-            this.txtcpf.Location = new System.Drawing.Point(483, 115);
+            this.txtcpf.Location = new System.Drawing.Point(483, 112);
             this.txtcpf.Mask = "000.000.000-00";
             this.txtcpf.Name = "txtcpf";
             this.txtcpf.Size = new System.Drawing.Size(153, 27);
@@ -429,7 +432,7 @@
             // txtrg
             // 
             this.txtrg.BackColor = System.Drawing.SystemColors.Info;
-            this.txtrg.Location = new System.Drawing.Point(483, 74);
+            this.txtrg.Location = new System.Drawing.Point(483, 71);
             this.txtrg.Mask = "00.000.000-00";
             this.txtrg.Name = "txtrg";
             this.txtrg.Size = new System.Drawing.Size(153, 27);
@@ -439,7 +442,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label7.Location = new System.Drawing.Point(433, 118);
+            this.label7.Location = new System.Drawing.Point(433, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 21);
             this.label7.TabIndex = 8;
@@ -567,6 +570,18 @@
             this.txteditar.UseVisualStyleBackColor = false;
             this.txteditar.Click += new System.EventHandler(this.txteditar_Click);
             // 
+            // btnbuscar
+            // 
+            this.btnbuscar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnbuscar.ForeColor = System.Drawing.Color.White;
+            this.btnbuscar.Location = new System.Drawing.Point(470, 149);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(130, 35);
+            this.btnbuscar.TabIndex = 6;
+            this.btnbuscar.Text = "Pesquisar";
+            this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
+            // 
             // Frmclientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -641,5 +656,6 @@
         private System.Windows.Forms.DataGridView TabelaCliente;
         private System.Windows.Forms.Button txtpesquisar;
         private System.Windows.Forms.TextBox txtcidade;
+        private System.Windows.Forms.Button btnbuscar;
     }
 }
