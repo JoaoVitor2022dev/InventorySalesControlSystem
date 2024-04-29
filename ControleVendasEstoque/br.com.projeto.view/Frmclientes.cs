@@ -65,18 +65,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
             // atualizar os dados do banco de dados 
             TabelaCliente.DataSource = dao.listarClientes();
 
-            txtnome.Clear();
-            txtrg.Clear();
-            txtcpf.Clear();
-            txtemail.Clear();
-            txttelefone.Clear();
-            txtcelular.Clear();
-            txtcep.Clear();
-            txtendereco.Clear();
-            txtnumero.Clear();
-            txtcomplemento.Clear();
-            txtbairro.Clear();
-            txtcidade.Clear(); 
+            new Helpers().LimparTela(this);
             txtuf.SelectedIndex = -1; 
         }
 
@@ -98,19 +87,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             tabClientes.SelectedTab = tabPage2;
 
-            txtcodigo.Clear();
-            txtnome.Clear();
-            txtrg.Clear();
-            txtcpf.Clear();
-            txtemail.Clear();
-            txttelefone.Clear();
-            txtcelular.Clear();
-            txtcep.Clear();
-            txtendereco.Clear();
-            txtnumero.Clear();
-            txtcomplemento.Clear();
-            txtbairro.Clear();
-            txtcidade.Clear();
+            new Helpers().LimparTela(this);
             txtuf.SelectedIndex = -1;
         }
 
@@ -141,18 +118,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
             // atualizar os dados do banco de dados 
             TabelaCliente.DataSource = dao.listarClientes();
 
-            txtnome.Clear();
-            txtrg.Clear();
-            txtcpf.Clear();
-            txtemail.Clear();
-            txttelefone.Clear();
-            txtcelular.Clear();
-            txtcep.Clear();
-            txtendereco.Clear();
-            txtnumero.Clear();
-            txtcomplemento.Clear();
-            txtbairro.Clear();
-            txtcidade.Clear();
+            new Helpers().LimparTela(this);
             txtuf.SelectedIndex = -1;
         }
 
@@ -253,6 +219,11 @@ namespace ControleVendasEstoque.br.com.projeto.view
         private void txtendereco_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnnovo_Click(object sender, EventArgs e)
+        {
+            new Helpers().LimparTela(this);
         }
     }
 }

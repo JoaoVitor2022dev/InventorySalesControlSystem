@@ -37,6 +37,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.tabClientes = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnbuscar = new System.Windows.Forms.Button();
             this.txtuf = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtcidade = new System.Windows.Forms.TextBox();
@@ -71,7 +72,6 @@
             this.btnsalvar = new System.Windows.Forms.Button();
             this.btndeletar = new System.Windows.Forms.Button();
             this.txteditar = new System.Windows.Forms.Button();
-            this.btnbuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabelaCliente)).BeginInit();
@@ -211,6 +211,18 @@
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btnbuscar
+            // 
+            this.btnbuscar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnbuscar.ForeColor = System.Drawing.Color.White;
+            this.btnbuscar.Location = new System.Drawing.Point(470, 149);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(130, 35);
+            this.btnbuscar.TabIndex = 6;
+            this.btnbuscar.Text = "Pesquisar";
+            this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // txtuf
             // 
@@ -533,6 +545,7 @@
             this.btnnovo.TabIndex = 2;
             this.btnnovo.Text = "Novo";
             this.btnnovo.UseVisualStyleBackColor = false;
+            this.btnnovo.Click += new System.EventHandler(this.btnnovo_Click);
             // 
             // btnsalvar
             // 
@@ -569,18 +582,6 @@
             this.txteditar.Text = "Editar";
             this.txteditar.UseVisualStyleBackColor = false;
             this.txteditar.Click += new System.EventHandler(this.txteditar_Click);
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnbuscar.ForeColor = System.Drawing.Color.White;
-            this.btnbuscar.Location = new System.Drawing.Point(470, 149);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(130, 35);
-            this.btnbuscar.TabIndex = 6;
-            this.btnbuscar.Text = "Pesquisar";
-            this.btnbuscar.UseVisualStyleBackColor = false;
-            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // Frmclientes
             // 
