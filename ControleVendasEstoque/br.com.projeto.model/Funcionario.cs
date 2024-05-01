@@ -2,8 +2,8 @@
 {
     public class Funcionario : Cliente
     {
-        public string Senha { get; set; }
-        public string Cargo { get; set; }
-        public string NivelAcesso { get; set; }
+        public string senha { get; set; }
+        public string cargo { get; set; }
+        public string nivelAcesso { get; set; }
     }
 }
