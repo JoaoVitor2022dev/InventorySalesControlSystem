@@ -1,8 +1,5 @@
 ﻿using ControleVendasEstoque.br.com.projeto.view;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque
@@ -17,7 +14,7 @@ namespace ControleVendasEstoque
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frmclientes());
+            Application.Run(new FrmFuncionarios());
         }
     }
 }
