@@ -535,6 +535,7 @@
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(68, 27);
             this.txtcodigo.TabIndex = 0;
+            this.txtcodigo.TextChanged += new System.EventHandler(this.txtcodigo_TextChanged);
             // 
             // tabPage2
             // 

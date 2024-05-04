@@ -77,5 +77,10 @@ namespace ControleVendasEstoque.br.com.projeto.view
             FuncionarioDAO dao = new FuncionarioDAO();
             TabelaFuncionarios.DataSource = dao.listarFuncionarios(); 
         }
+
+        private void txtcodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
