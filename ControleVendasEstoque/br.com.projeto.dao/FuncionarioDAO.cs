@@ -2,6 +2,7 @@
 using ControleVendasEstoque.br.com.projeto.model;
 using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.dao
@@ -54,5 +55,35 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         }
         #endregion
 
+        #region Listar Funcionarios
+        public DataTable listarFuncionarios()
+        {
+            try
+            {
+                // 1 - passo é criar um datatable com sql 
+                DataTable tabelaFuncionario = new DataTable();
+                string sql = "SELECT * FROM tb_funcionarios;";
+
+                // 2 - organizar o comando sql no executar 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 3 - passo - criar MysqDataApter para preencher os dados no datatable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(tabelaFuncionario);
+                conexao.Close();
+
+                return tabelaFuncionario;
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show("Error ao executar o comando sql: " + error);
+                return null;
+            }
+        }
+
+        #endregion
     }
 }

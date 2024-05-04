@@ -71,5 +71,11 @@ namespace ControleVendasEstoque.br.com.projeto.view
         {
 
         }
+
+        private void txtpesquisar_Click(object sender, EventArgs e)
+        {
+            FuncionarioDAO dao = new FuncionarioDAO();
+            TabelaFuncionarios.DataSource = dao.listarFuncionarios(); 
+        }
     }
 }

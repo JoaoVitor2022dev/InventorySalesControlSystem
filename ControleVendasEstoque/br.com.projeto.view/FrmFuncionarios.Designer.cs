@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabClientes = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtuf = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.cbcargos = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.textsenha = new System.Windows.Forms.TextBox();
@@ -75,8 +77,6 @@
             this.btndeletar = new System.Windows.Forms.Button();
             this.btnsalvar = new System.Windows.Forms.Button();
             this.btnnovo = new System.Windows.Forms.Button();
-            this.txtuf = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -162,6 +162,53 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtuf
+            // 
+            this.txtuf.BackColor = System.Drawing.SystemColors.Info;
+            this.txtuf.FormattingEnabled = true;
+            this.txtuf.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.txtuf.Location = new System.Drawing.Point(762, 206);
+            this.txtuf.Name = "txtuf";
+            this.txtuf.Size = new System.Drawing.Size(154, 29);
+            this.txtuf.TabIndex = 36;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.Brown;
+            this.label20.Location = new System.Drawing.Point(710, 209);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(33, 21);
+            this.label20.TabIndex = 35;
+            this.label20.Text = "UF:";
             // 
             // cbcargos
             // 
@@ -524,6 +571,7 @@
             this.txtpesquisar.TabIndex = 5;
             this.txtpesquisar.Text = "Pesquisar";
             this.txtpesquisar.UseVisualStyleBackColor = false;
+            this.txtpesquisar.Click += new System.EventHandler(this.txtpesquisar_Click);
             // 
             // txtconsulta
             // 
@@ -590,53 +638,6 @@
             this.btnnovo.Text = "Novo";
             this.btnnovo.UseVisualStyleBackColor = false;
             this.btnnovo.Click += new System.EventHandler(this.btnnovo_Click);
-            // 
-            // txtuf
-            // 
-            this.txtuf.BackColor = System.Drawing.SystemColors.Info;
-            this.txtuf.FormattingEnabled = true;
-            this.txtuf.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AP",
-            "AM",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MT",
-            "MS",
-            "MG",
-            "PA",
-            "PB",
-            "PR",
-            "PE",
-            "PI",
-            "RJ",
-            "RN",
-            "RS",
-            "RO",
-            "RR",
-            "SC",
-            "SP",
-            "SE",
-            "TO"});
-            this.txtuf.Location = new System.Drawing.Point(762, 206);
-            this.txtuf.Name = "txtuf";
-            this.txtuf.Size = new System.Drawing.Size(154, 29);
-            this.txtuf.TabIndex = 36;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.ForeColor = System.Drawing.Color.Brown;
-            this.label20.Location = new System.Drawing.Point(710, 209);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(33, 21);
-            this.label20.TabIndex = 35;
-            this.label20.Text = "UF:";
             // 
             // FrmFuncionarios
             // 
