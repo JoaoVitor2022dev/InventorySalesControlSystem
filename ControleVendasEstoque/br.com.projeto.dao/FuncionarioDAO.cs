@@ -90,7 +90,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         {
             try
             {
-                string sql = "UPDATE tb_funcionarios \r\nSET \r\n    nome = @nome, \r\n    rg = @rg, \r\n    cpf = @cpf, \r\n    email = @email,\r\n    senha = @senha, \r\n    cargo = @cargo, \r\n  " +
+                string sql = "UPDATE tb_funcionarios \r\nSET \r\n nome = @nome, \r\n    rg = @rg, \r\n    cpf = @cpf, \r\n    email = @email,\r\n    senha = @senha, \r\n    cargo = @cargo, \r\n  " +
                     "nivel_acesso = @nivel, \r\n    telefone = @telefone, \r\n    celular = @celular, \r\n    cep = @cep, \r\n    endereco = @endereco, \r\n    numero = @numero, \r\n    complemento = @complemento, \r\n   " +
                     " bairro = @bairro, \r\n    cidade = @cidade, \r\n    estado = @estado WHERE id = @codigo";
 
@@ -132,11 +132,11 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         {
             try
             {
-                string sql = "UPDATE tb_funcionarios WHERE id = @codigo";
+                string sql = "DELETE FROM tb_funcionarios WHERE id = @id";
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
 
-                executacmd.Parameters.AddWithValue("@codigo", obj.codigo);
+                executacmd.Parameters.AddWithValue("@id", obj.codigo);
 
                 conexao.Open();
                 executacmd.ExecuteNonQuery();

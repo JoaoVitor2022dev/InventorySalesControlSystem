@@ -1,13 +1,6 @@
 ﻿using ControleVendasEstoque.br.com.projeto.dao;
 using ControleVendasEstoque.br.com.projeto.model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.view
@@ -45,7 +38,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
             obj.rg = txtrg.Text;
             obj.cpf = txtcpf.Text;
             obj.email = txtemail.Text;
-            obj.senha = textsenha.Text;  
+            obj.senha = txtsenha.Text;  
             obj.nivelAcesso = txtnivel.SelectedItem.ToString();
             obj.telefone = txttelefone.Text;
             obj.celular = txtcelular.Text;
@@ -60,16 +53,54 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             FuncionarioDAO dao = new FuncionarioDAO();
             dao.cadastrarFuncionario(obj);
+
+            TabelaFuncionarios.DataSource = dao.listarFuncionarios();
         }
 
         private void btndeletar_Click(object sender, EventArgs e)
         {
+            Funcionario obj = new Funcionario(); 
 
+            obj.codigo = int.Parse(txtcodigo.Text);
+
+            FuncionarioDAO dao = new FuncionarioDAO();
+            dao.DeletarFuncionario(obj);
+
+            // atualizar a lista de dados 
+            TabelaFuncionarios.DataSource = dao.listarFuncionarios(); 
         }
 
         private void txteditar_Click(object sender, EventArgs e)
         {
+            // editar 
+            Funcionario obj = new Funcionario();
 
+            // receber os dados dos campos 
+
+            obj.name = txtnome.Text;
+            obj.rg = txtrg.Text;
+            obj.cpf = txtcpf.Text;
+            obj.email = txtemail.Text;
+            obj.senha = txtsenha.Text;
+            obj.nivelAcesso = txtnivel.SelectedItem.ToString();
+            obj.telefone = txttelefone.Text;
+            obj.celular = txtcelular.Text;
+            obj.cep = txtcep.Text;
+            obj.endereco = txtendereco.Text;
+            obj.numero = int.Parse(txtnumero.Text);
+            obj.complemento = txtcomplemento.Text;
+            obj.bairro = txtbairro.Text;
+            obj.cidade = txtcidade.Text;
+            obj.estado = txtuf.SelectedItem.ToString();
+            obj.cargo = cbcargos.SelectedItem.ToString();
+            obj.numero = int.Parse(txtnumero.Text);
+
+            FuncionarioDAO dao = new FuncionarioDAO();
+            dao.alterarFuncionario(obj);
+
+            TabelaFuncionarios.DataSource = dao.listarFuncionarios();
+
+            tabFuncionario.SelectedTab = tabPage1;
         }
 
         private void txtpesquisar_Click(object sender, EventArgs e)
@@ -79,6 +110,34 @@ namespace ControleVendasEstoque.br.com.projeto.view
         }
 
         private void txtcodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabelaFuncionarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtcodigo.Text = TabelaFuncionarios.CurrentRow.Cells[0].Value.ToString();
+            txtnome.Text = TabelaFuncionarios.CurrentRow.Cells[1].Value.ToString();
+            txtrg.Text = TabelaFuncionarios.CurrentRow.Cells[2].Value.ToString();
+            txtcpf.Text = TabelaFuncionarios.CurrentRow.Cells[3].Value.ToString();
+            txtemail.Text = TabelaFuncionarios.CurrentRow.Cells[4].Value.ToString();
+            txtsenha.Text = TabelaFuncionarios.CurrentRow.Cells[5].Value.ToString();
+            cbcargos.Text = TabelaFuncionarios.CurrentRow.Cells[6].Value.ToString();
+            txtnivel.Text = TabelaFuncionarios.CurrentRow.Cells[7].Value.ToString();
+            txttelefone.Text = TabelaFuncionarios.CurrentRow.Cells[8].Value.ToString();
+            txtcelular.Text = TabelaFuncionarios.CurrentRow.Cells[9].Value.ToString();
+            txtcep.Text = TabelaFuncionarios.CurrentRow.Cells[10].Value.ToString();
+            txtendereco.Text = TabelaFuncionarios.CurrentRow.Cells[11].Value.ToString();
+            txtnumero.Text = TabelaFuncionarios.CurrentRow.Cells[12].Value.ToString();
+            txtcomplemento.Text = TabelaFuncionarios.CurrentRow.Cells[13].Value.ToString();
+            txtbairro.Text = TabelaFuncionarios.CurrentRow.Cells[14].Value.ToString();
+            txtcidade.Text = TabelaFuncionarios.CurrentRow.Cells[15].Value.ToString();
+            txtuf.Text = TabelaFuncionarios.CurrentRow.Cells[16].Value.ToString();
+
+            tabFuncionario.SelectedTab = tabPage1;
+        }
+
+        private void cbcargos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
