@@ -61,9 +61,12 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             try
             {
                 // 1 - Definir o CMD sql - insert into
-                string sql = @"update tb_clientes set nome=@nome, rg=@rg, cpf=@cpf, email=@email, telefone=@telefone, celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado) 
-                  VALUES (@nome, @rg, @cpf, @email, @telefone, @celular, @cep, @endereco, @numero, @complemento , @bairro, @cidade, @estado;
-                  where  id=@id  ";
+                string sql = @"UPDATE tb_funcionarios 
+                             SET nome=@nome, rg=@rg, cpf=@cpf, email=@email, 
+                             telefone=@telefone, 
+                             celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, 
+                             complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado 
+                             WHERE id=@id";
 
                 // 2 -  Organizar o comando sql     
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);

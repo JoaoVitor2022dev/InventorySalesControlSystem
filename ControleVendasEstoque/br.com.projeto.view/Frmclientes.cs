@@ -88,7 +88,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
             tabClientes.SelectedTab = tabPage2;
 
             new Helpers().LimparTela(this);
-            txtuf.SelectedIndex = -1;
+            
         }
 
         private void txteditar_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
             obj.complemento = txtcomplemento.Text;
             obj.bairro = txtbairro.Text;
             obj.cidade = txtcidade.Text;
-            obj.estado = txtuf.Text;
+            obj.estado = txtuf.SelectedItem.ToString();
             obj.codigo = int.Parse(txtcodigo.Text);
 
             ClienteDAO dao = new ClienteDAO();
@@ -119,7 +119,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
             TabelaCliente.DataSource = dao.listarClientes();
 
             new Helpers().LimparTela(this);
-            txtuf.SelectedIndex = -1;
         }
 
         private void txtcep_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -224,6 +223,11 @@ namespace ControleVendasEstoque.br.com.projeto.view
         private void btnnovo_Click(object sender, EventArgs e)
         {
             new Helpers().LimparTela(this);
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

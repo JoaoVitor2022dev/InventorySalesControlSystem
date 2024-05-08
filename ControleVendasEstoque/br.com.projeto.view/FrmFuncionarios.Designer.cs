@@ -551,6 +551,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // TabelaFuncionarios
             // 
@@ -563,6 +564,7 @@
             this.TabelaFuncionarios.Size = new System.Drawing.Size(943, 275);
             this.TabelaFuncionarios.TabIndex = 6;
             this.TabelaFuncionarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaFuncionarios_CellClick);
+            this.TabelaFuncionarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaFuncionarios_CellContentClick);
             // 
             // txtpesquisar
             // 
@@ -657,6 +659,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmFuncionarios";
             this.Text = "Cadastro de Funcionários";
+            this.Load += new System.EventHandler(this.FrmFuncionarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabFuncionario.ResumeLayout(false);

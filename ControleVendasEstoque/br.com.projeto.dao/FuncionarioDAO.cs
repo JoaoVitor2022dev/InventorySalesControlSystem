@@ -74,6 +74,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                 dataAdapter.Fill(tabelaFuncionario);
                 conexao.Close();
 
+
                 return tabelaFuncionario;
             }
             catch (Exception error)
@@ -90,9 +91,13 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         {
             try
             {
-                string sql = "UPDATE tb_funcionarios \r\nSET \r\n nome = @nome, \r\n    rg = @rg, \r\n    cpf = @cpf, \r\n    email = @email,\r\n    senha = @senha, \r\n    cargo = @cargo, \r\n  " +
-                    "nivel_acesso = @nivel, \r\n    telefone = @telefone, \r\n    celular = @celular, \r\n    cep = @cep, \r\n    endereco = @endereco, \r\n    numero = @numero, \r\n    complemento = @complemento, \r\n   " +
-                    " bairro = @bairro, \r\n    cidade = @cidade, \r\n    estado = @estado WHERE id = @codigo";
+                string sql = @"UPDATE tb_funcionarios 
+                             SET nome=@nome, rg=@rg, cpf=@cpf, email=@email, senha=@senha, 
+                             cargo=@cargo, nivel_acesso=@nivel, telefone=@telefone, 
+                             celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, 
+                             complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado 
+                             WHERE id=@id";
+
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@nome", obj.name);
@@ -111,11 +116,10 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                 executacmd.Parameters.AddWithValue("@bairro", obj.bairro);
                 executacmd.Parameters.AddWithValue("@cidade", obj.cidade);
                 executacmd.Parameters.AddWithValue("@estado", obj.estado);
-                executacmd.Parameters.AddWithValue("@codigo", obj.codigo);
+                executacmd.Parameters.AddWithValue("@id", obj.codigo);
 
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
-
                 MessageBox.Show("Cliente Alterado com sucesso!");
                 conexao.Close();
             }
@@ -147,6 +151,37 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             catch (Exception error)
             {
                 MessageBox.Show($"Ocorreu um error: {error}");
+            }
+        }
+        #endregion
+
+        #region Lista Funcionario por Nome
+        public DataTable listarFuncionarioPorNome(string nome)
+        {
+            try
+            {
+                // 1 - passo é criar um datatable com sql 
+                DataTable tabelaFuncionario = new DataTable();
+                string sql = "SELECT * FROM tb_funcionarios WHERE nome= @nome;";
+
+                // 2 - organizar o comando sql no executar 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", nome); 
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 3 - passo - criar MysqDataApter para preencher os dados no datatable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(tabelaFuncionario);
+                conexao.Close();
+
+                return tabelaFuncionario;
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show("Error ao executar o comando sql: " + error);
+                return null;
             }
         }
         #endregion

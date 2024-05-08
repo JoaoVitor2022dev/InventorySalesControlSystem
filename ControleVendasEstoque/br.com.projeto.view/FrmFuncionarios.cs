@@ -1,6 +1,7 @@
 ﻿using ControleVendasEstoque.br.com.projeto.dao;
 using ControleVendasEstoque.br.com.projeto.model;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.view
@@ -93,7 +94,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
             obj.cidade = txtcidade.Text;
             obj.estado = txtuf.SelectedItem.ToString();
             obj.cargo = cbcargos.SelectedItem.ToString();
-            obj.numero = int.Parse(txtnumero.Text);
+            obj.codigo = int.Parse(txtcodigo.Text);
 
             FuncionarioDAO dao = new FuncionarioDAO();
             dao.alterarFuncionario(obj);
@@ -105,8 +106,16 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
         private void txtpesquisar_Click(object sender, EventArgs e)
         {
-            FuncionarioDAO dao = new FuncionarioDAO();
-            TabelaFuncionarios.DataSource = dao.listarFuncionarios(); 
+            string nome = txtconsulta.Text;
+
+            FuncionarioDAO dao = new FuncionarioDAO(); 
+            TabelaFuncionarios.DataSource= dao.listarFuncionarioPorNome(nome);
+
+            if (TabelaFuncionarios.Rows.Count == 0)
+            {
+                MessageBox.Show("Funcionário não econtrado.");
+                TabelaFuncionarios.DataSource = dao.listarFuncionarios();
+            }
         }
 
         private void txtcodigo_TextChanged(object sender, EventArgs e)
@@ -115,6 +124,20 @@ namespace ControleVendasEstoque.br.com.projeto.view
         }
 
         private void TabelaFuncionarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void cbcargos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabelaFuncionarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtcodigo.Text = TabelaFuncionarios.CurrentRow.Cells[0].Value.ToString();
             txtnome.Text = TabelaFuncionarios.CurrentRow.Cells[1].Value.ToString();
@@ -137,9 +160,11 @@ namespace ControleVendasEstoque.br.com.projeto.view
             tabFuncionario.SelectedTab = tabPage1;
         }
 
-        private void cbcargos_SelectedIndexChanged(object sender, EventArgs e)
+        private void FrmFuncionarios_Load(object sender, EventArgs e)
         {
-
+            TabelaFuncionarios.DefaultCellStyle.ForeColor = Color.Black;
+            FuncionarioDAO dao = new FuncionarioDAO();
+            TabelaFuncionarios.DataSource = dao.listarFuncionarios();
         }
     }
 }
