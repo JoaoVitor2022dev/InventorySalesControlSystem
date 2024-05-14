@@ -111,10 +111,10 @@
             this.tabFuncionario.Controls.Add(this.tabPage1);
             this.tabFuncionario.Controls.Add(this.tabPage2);
             this.tabFuncionario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabFuncionario.Location = new System.Drawing.Point(0, 157);
+            this.tabFuncionario.Location = new System.Drawing.Point(0, 166);
             this.tabFuncionario.Name = "tabFuncionario";
             this.tabFuncionario.SelectedIndex = 0;
-            this.tabFuncionario.Size = new System.Drawing.Size(971, 397);
+            this.tabFuncionario.Size = new System.Drawing.Size(971, 388);
             this.tabFuncionario.TabIndex = 2;
             // 
             // tabPage1
@@ -158,7 +158,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(963, 363);
+            this.tabPage1.Size = new System.Drawing.Size(963, 354);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -266,6 +266,7 @@
             this.btnbuscar.TabIndex = 6;
             this.btnbuscar.Text = "Pesquisar";
             this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // txtnivel
             // 
@@ -449,7 +450,7 @@
             // 
             this.txtcpf.BackColor = System.Drawing.SystemColors.Info;
             this.txtcpf.Location = new System.Drawing.Point(762, 71);
-            this.txtcpf.Mask = "000.000.000-00";
+            this.txtcpf.Mask = "000,000,000-00";
             this.txtcpf.Name = "txtcpf";
             this.txtcpf.Size = new System.Drawing.Size(153, 27);
             this.txtcpf.TabIndex = 10;
@@ -458,7 +459,7 @@
             // 
             this.txtrg.BackColor = System.Drawing.SystemColors.Info;
             this.txtrg.Location = new System.Drawing.Point(514, 71);
-            this.txtrg.Mask = "00.000.000-00";
+            this.txtrg.Mask = "00,000,000-00";
             this.txtrg.Name = "txtrg";
             this.txtrg.Size = new System.Drawing.Size(153, 27);
             this.txtrg.TabIndex = 9;
@@ -585,6 +586,7 @@
             this.txtconsulta.Name = "txtconsulta";
             this.txtconsulta.Size = new System.Drawing.Size(291, 27);
             this.txtconsulta.TabIndex = 4;
+            this.txtconsulta.TextChanged += new System.EventHandler(this.txtconsulta_TextChanged);
             // 
             // label18
             // 

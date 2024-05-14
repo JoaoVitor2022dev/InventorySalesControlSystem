@@ -437,7 +437,7 @@
             // 
             this.txtcpf.BackColor = System.Drawing.SystemColors.Info;
             this.txtcpf.Location = new System.Drawing.Point(483, 112);
-            this.txtcpf.Mask = "000.000.000-00";
+            this.txtcpf.Mask = "000,000,000-00";
             this.txtcpf.Name = "txtcpf";
             this.txtcpf.Size = new System.Drawing.Size(153, 27);
             this.txtcpf.TabIndex = 10;
@@ -446,7 +446,7 @@
             // 
             this.txtrg.BackColor = System.Drawing.SystemColors.Info;
             this.txtrg.Location = new System.Drawing.Point(483, 71);
-            this.txtrg.Mask = "00.000.000-00";
+            this.txtrg.Mask = "00,000,000-00";
             this.txtrg.Name = "txtrg";
             this.txtrg.Size = new System.Drawing.Size(153, 27);
             this.txtrg.TabIndex = 9;

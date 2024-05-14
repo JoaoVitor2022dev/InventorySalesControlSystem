@@ -61,9 +61,8 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             try
             {
                 // 1 - Definir o CMD sql - insert into
-                string sql = @"UPDATE tb_funcionarios 
-                             SET nome=@nome, rg=@rg, cpf=@cpf, email=@email, 
-                             telefone=@telefone, 
+                string sql = @"UPDATE tb_clientes
+                             SET nome=@nome, rg=@rg, cpf=@cpf, email=@email, telefone=@telefone, 
                              celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, 
                              complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado 
                              WHERE id=@id";
@@ -88,13 +87,12 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                 // 3 - executar o comando sql 
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
-
+                
                 MessageBox.Show("Cliente Modificado com Sucesso!");
                 conexao.Close();
             }
             catch (Exception erro)
             {
-
                 MessageBox.Show("Ocorreu um error: " + erro);
             }
         }

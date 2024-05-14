@@ -155,8 +155,8 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         }
         #endregion
 
-        #region Lista Funcionario por Nome
-        public DataTable listarFuncionarioPorNome(string nome)
+        #region Buscar Funcionario por Nome
+        public DataTable buscarFuncionarioPorNome(string nome)
         {
             try
             {
@@ -167,6 +167,37 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                 // 2 - organizar o comando sql no executar 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@nome", nome); 
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 3 - passo - criar MysqDataApter para preencher os dados no datatable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(tabelaFuncionario);
+                conexao.Close();
+
+                return tabelaFuncionario;
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show("Error ao executar o comando sql: " + error);
+                return null;
+            }
+        }
+        #endregion
+
+        #region Listar Funcionario por nome 
+        public DataTable listarFuncionarioPorNome(string nome)
+        {
+            try
+            {
+                // 1 - passo é criar um datatable com sql 
+                DataTable tabelaFuncionario = new DataTable();
+                string sql = "SELECT * FROM tb_funcionarios WHERE nome LIKE @nome;";
+
+                // 2 - organizar o comando sql no executar 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", nome);
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 

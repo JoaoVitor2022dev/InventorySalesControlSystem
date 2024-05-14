@@ -111,7 +111,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
             obj.codigo = int.Parse(txtcodigo.Text);
 
             ClienteDAO dao = new ClienteDAO();
-            dao.CadastrarCliente(obj);
+            dao.AlterarCliente(obj);
 
             tabClientes.SelectedTab = tabPage2;
 

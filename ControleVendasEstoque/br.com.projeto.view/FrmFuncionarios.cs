@@ -1,6 +1,7 @@
 ﻿using ControleVendasEstoque.br.com.projeto.dao;
 using ControleVendasEstoque.br.com.projeto.model;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -15,17 +16,15 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label19_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnnovo_Click(object sender, EventArgs e)
         {
-
+            new Helpers().LimparTela(this);
         }
 
         private void btnsalvar_Click(object sender, EventArgs e)
@@ -101,7 +100,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             TabelaFuncionarios.DataSource = dao.listarFuncionarios();
 
-            tabFuncionario.SelectedTab = tabPage1;
+            tabFuncionario.SelectedTab = tabPage2;
         }
 
         private void txtpesquisar_Click(object sender, EventArgs e)
@@ -109,9 +108,9 @@ namespace ControleVendasEstoque.br.com.projeto.view
             string nome = txtconsulta.Text;
 
             FuncionarioDAO dao = new FuncionarioDAO(); 
-            TabelaFuncionarios.DataSource= dao.listarFuncionarioPorNome(nome);
+            TabelaFuncionarios.DataSource= dao.buscarFuncionarioPorNome(nome);
 
-            if (TabelaFuncionarios.Rows.Count == 0)
+            if (TabelaFuncionarios.Rows.Count == 0 || txtpesquisar.Text == string.Empty)
             {
                 MessageBox.Show("Funcionário não econtrado.");
                 TabelaFuncionarios.DataSource = dao.listarFuncionarios();
@@ -120,7 +119,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
         private void txtcodigo_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void TabelaFuncionarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -129,12 +127,10 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
         private void cbcargos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void TabelaFuncionarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -165,6 +161,39 @@ namespace ControleVendasEstoque.br.com.projeto.view
             TabelaFuncionarios.DefaultCellStyle.ForeColor = Color.Black;
             FuncionarioDAO dao = new FuncionarioDAO();
             TabelaFuncionarios.DataSource = dao.listarFuncionarios();
+        }
+
+        private void txtconsulta_TextChanged(object sender, EventArgs e)
+        {
+            string nome = "%" + txtconsulta.Text + "%";
+
+            FuncionarioDAO dao = new FuncionarioDAO();
+
+            TabelaFuncionarios.DataSource = dao.listarFuncionarioPorNome(nome); 
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cep = txtcep.Text;
+
+                string xml = "https://viacep.com.br/ws/" + cep + "/xml/";
+
+                DataSet dados = new DataSet();
+
+                dados.ReadXml(xml);
+
+                txtendereco.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
+                txtbairro.Text = dados.Tables[0].Rows[0]["bairro"].ToString();
+                txtcidade.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
+                txtuf.Text = dados.Tables[0].Rows[0]["uf"].ToString();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Endereço não encontrado, por favor digite manualmente.");
+            }
         }
     }
 }
