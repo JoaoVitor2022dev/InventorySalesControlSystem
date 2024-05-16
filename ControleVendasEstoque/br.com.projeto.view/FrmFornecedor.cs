@@ -1,4 +1,5 @@
-﻿using ControleVendasEstoque.br.com.projeto.model;
+﻿using ControleVendasEstoque.br.com.projeto.dao;
+using ControleVendasEstoque.br.com.projeto.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,36 @@ namespace ControleVendasEstoque.br.com.projeto.view
         private void btnnovo_Click(object sender, EventArgs e)
         {
             new Helpers().LimparTela(this);
+        }
+
+        private void btnsalvar_Click(object sender, EventArgs e)
+        {
+            Fornecedor obj = new Fornecedor();
+
+            obj.name = txtnome.Text;
+            obj.cnpj = txtcnpj.Text; 
+            obj.email = txtemail.Text;
+            obj.telefone = txttelefone.Text;
+            obj.celular = txtcelular.Text;
+            obj.cep = txtcep.Text;
+            obj.endereco = txtendereco.Text;
+            obj.numero = int.Parse(txtnumero.Text);
+            obj.complemento = txtcomplemento.Text;
+            obj.bairro = txtbairro.Text;
+            obj.cidade = txtcidade.Text;
+            obj.estado = txtuf.Text;
+
+            FornecedorDAO dao = new FornecedorDAO();
+
+            dao.CadastrarFornecedor(obj);
+
+            TabelaFornecedores.DataSource = dao.listarFornecedores();
+        }
+
+        private void FrmFornecedor_Load(object sender, EventArgs e)
+        {
+            FornecedorDAO dao = new FornecedorDAO();
+            TabelaFornecedores.DataSource = dao.listarFornecedores();   
         }
     }
 }
