@@ -460,6 +460,7 @@
             this.TabelaFornecedores.ReadOnly = true;
             this.TabelaFornecedores.Size = new System.Drawing.Size(943, 275);
             this.TabelaFornecedores.TabIndex = 6;
+            this.TabelaFornecedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaFornecedores_CellContentClick);
             // 
             // txtpesquisar
             // 
@@ -501,6 +502,7 @@
             this.txteditar.TabIndex = 13;
             this.txteditar.Text = "Editar";
             this.txteditar.UseVisualStyleBackColor = false;
+            this.txteditar.Click += new System.EventHandler(this.txteditar_Click);
             // 
             // btndeletar
             // 
@@ -513,6 +515,7 @@
             this.btndeletar.TabIndex = 12;
             this.btndeletar.Text = "Deletar";
             this.btndeletar.UseVisualStyleBackColor = false;
+            this.btndeletar.Click += new System.EventHandler(this.btndeletar_Click);
             // 
             // btnsalvar
             // 

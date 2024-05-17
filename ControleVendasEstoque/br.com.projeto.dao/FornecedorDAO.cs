@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System;
 using System.Data;
+using Mysqlx;
 
 namespace ControleVendasEstoque.br.com.projeto.dao
 {
@@ -53,7 +54,6 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         }
         #endregion
 
-
         #region Listar Fornecedores 
         public DataTable listarFornecedores()
         {
@@ -81,6 +81,70 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                 return null;
             }
         }
-#endregion
+        #endregion]
+
+        #region Metodo de alterra um Fornecedor 
+        public void alterarForncedor(Fornecedor obj) 
+        {
+            try
+            {
+                string sql = @"UPDATE tb_fornecedores 
+                             SET nome=@nome, cnpj=@cnpj, email=@email,
+                             telefone=@telefone, 
+                             celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, 
+                             complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado 
+                             WHERE id=@id";
+
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", obj.name);
+                executacmd.Parameters.AddWithValue("@cnpj", obj.cnpj);
+                executacmd.Parameters.AddWithValue("@email", obj.email);
+                executacmd.Parameters.AddWithValue("@telefone", obj.telefone);
+                executacmd.Parameters.AddWithValue("@celular", obj.celular);
+                executacmd.Parameters.AddWithValue("@cep", obj.cep);
+                executacmd.Parameters.AddWithValue("@endereco", obj.endereco);
+                executacmd.Parameters.AddWithValue("@numero", obj.numero);
+                executacmd.Parameters.AddWithValue("@complemento", obj.complemento);
+                executacmd.Parameters.AddWithValue("@bairro", obj.bairro);
+                executacmd.Parameters.AddWithValue("@cidade", obj.cidade);
+                executacmd.Parameters.AddWithValue("@estado", obj.estado);
+                executacmd.Parameters.AddWithValue("@id", obj.codigo);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+                MessageBox.Show("Fornecedor Alterado com Sucesso!");
+                conexao.Close();
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"Ocorreu um error: {error}");
+            }
+        }
+        #endregion
+
+        #region Metodo de excluir Fornecedor 
+        public void DeletarForncedor(Fornecedor obj)
+        {
+            try
+            {
+                string sql = @"DELETE FROM tb_fornecedores WHERE id = @id ";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", obj.codigo);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+                MessageBox.Show("Fornecedor Deletado com sucesso!");
+                conexao.Close();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um error: " + erro );
+            }
+        }
+        #endregion
     }
 }
