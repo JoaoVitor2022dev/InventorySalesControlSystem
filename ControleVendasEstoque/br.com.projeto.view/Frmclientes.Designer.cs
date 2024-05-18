@@ -147,6 +147,7 @@
             this.txtconsulta.Name = "txtconsulta";
             this.txtconsulta.Size = new System.Drawing.Size(291, 27);
             this.txtconsulta.TabIndex = 4;
+            this.txtconsulta.TextChanged += new System.EventHandler(this.txtconsulta_TextChanged);
             this.txtconsulta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtconsulta_KeyPress);
             // 
             // label18

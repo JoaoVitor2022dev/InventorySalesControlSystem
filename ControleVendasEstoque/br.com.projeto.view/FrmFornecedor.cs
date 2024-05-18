@@ -146,5 +146,29 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             new Helpers().LimparTela(this);
         }
+
+        private void txtpesquisar_Click(object sender, EventArgs e)
+        {
+            string nome = txtconsulta.Text;
+
+            FornecedorDAO dao = new FornecedorDAO();
+
+            TabelaFornecedores.DataSource = dao.BuscarFornecedoresPorNome(nome);
+
+            if (TabelaFornecedores.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhum Fornecedor encontrado.");
+                TabelaFornecedores.DataSource = dao.listarFornecedores();
+            }
+        }
+
+        private void txtconsulta_TextChanged(object sender, EventArgs e)
+        {
+            string nome = "%" + txtconsulta.Text + "%";
+
+            FornecedorDAO dao = new FornecedorDAO();
+
+            TabelaFornecedores.DataSource = dao.listarFornecedoresPorNome(nome);
+        }
     }
 }

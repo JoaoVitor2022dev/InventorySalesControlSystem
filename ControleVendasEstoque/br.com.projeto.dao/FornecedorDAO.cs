@@ -146,5 +146,66 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             }
         }
         #endregion
+
+        #region Listar Fornecedor por nome 
+        public DataTable listarFornecedoresPorNome(string nome)
+        {
+            try
+            {
+                // 1 - passo é criar um datatable com sql 
+                DataTable tabelaFornecedor = new DataTable();
+                string sql = "SELECT * FROM tb_fornecedores WHERE nome Like @nome;";
+
+                // 2 - organizar o comando sql no executar 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", nome);
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 3 - passo - criar MysqDataApter para preencher os dados no datatable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(tabelaFornecedor);
+                conexao.Close();
+
+                return tabelaFornecedor;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error ao executar o comando sql: " + error);
+                return null;
+            }
+        }
+        #endregion
+
+
+        #region Buscar Fornecedor por nome 
+        public DataTable BuscarFornecedoresPorNome(string nome)
+        {
+            try
+            {
+                // 1 - passo é criar um datatable com sql 
+                DataTable tabelaFornecedor = new DataTable();
+                string sql = "SELECT * FROM tb_fornecedores WHERE nome = @nome;";
+
+                // 2 - organizar o comando sql no executar 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", nome);
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 3 - passo - criar MysqDataApter para preencher os dados no datatable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(tabelaFornecedor);
+                conexao.Close();
+
+                return tabelaFornecedor;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error ao executar o comando sql: " + error);
+                return null;
+            }
+        }
+        #endregion
     }
 }

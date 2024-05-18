@@ -472,6 +472,7 @@
             this.txtpesquisar.TabIndex = 5;
             this.txtpesquisar.Text = "Pesquisar";
             this.txtpesquisar.UseVisualStyleBackColor = false;
+            this.txtpesquisar.Click += new System.EventHandler(this.txtpesquisar_Click);
             // 
             // txtconsulta
             // 
@@ -480,6 +481,7 @@
             this.txtconsulta.Name = "txtconsulta";
             this.txtconsulta.Size = new System.Drawing.Size(291, 27);
             this.txtconsulta.TabIndex = 4;
+            this.txtconsulta.TextChanged += new System.EventHandler(this.txtconsulta_TextChanged);
             // 
             // label18
             // 

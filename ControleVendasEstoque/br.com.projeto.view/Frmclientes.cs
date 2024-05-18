@@ -229,5 +229,10 @@ namespace ControleVendasEstoque.br.com.projeto.view
         {
 
         }
+
+        private void txtconsulta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
