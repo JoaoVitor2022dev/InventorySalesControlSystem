@@ -177,7 +177,6 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         }
         #endregion
 
-
         #region Buscar Fornecedor por nome 
         public DataTable BuscarFornecedoresPorNome(string nome)
         {

@@ -32,6 +32,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabProdutos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbfornecedor = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textpreco = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtqtd = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtdesc = new System.Windows.Forms.TextBox();
@@ -47,11 +52,6 @@
             this.btndeletar = new System.Windows.Forms.Button();
             this.btnsalvar = new System.Windows.Forms.Button();
             this.btnnovo = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textpreco = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbfornecedor = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabProdutos.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -113,6 +113,52 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label7.Location = new System.Drawing.Point(536, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 21);
+            this.label7.TabIndex = 11;
+            // 
+            // cbfornecedor
+            // 
+            this.cbfornecedor.BackColor = System.Drawing.SystemColors.Info;
+            this.cbfornecedor.FormattingEnabled = true;
+            this.cbfornecedor.Location = new System.Drawing.Point(138, 156);
+            this.cbfornecedor.Name = "cbfornecedor";
+            this.cbfornecedor.Size = new System.Drawing.Size(308, 29);
+            this.cbfornecedor.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label6.Location = new System.Drawing.Point(28, 164);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(103, 21);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Fornecedor:";
+            // 
+            // textpreco
+            // 
+            this.textpreco.BackColor = System.Drawing.SystemColors.Info;
+            this.textpreco.Location = new System.Drawing.Point(542, 71);
+            this.textpreco.Name = "textpreco";
+            this.textpreco.Size = new System.Drawing.Size(100, 27);
+            this.textpreco.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label2.Location = new System.Drawing.Point(482, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 21);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Preço:";
             // 
             // txtqtd
             // 
@@ -258,6 +304,7 @@
             this.btnsalvar.TabIndex = 15;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = false;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // btnnovo
             // 
@@ -270,52 +317,6 @@
             this.btnnovo.TabIndex = 14;
             this.btnnovo.Text = "Novo";
             this.btnnovo.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(482, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 21);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Preço:";
-            // 
-            // textpreco
-            // 
-            this.textpreco.BackColor = System.Drawing.SystemColors.Info;
-            this.textpreco.Location = new System.Drawing.Point(542, 71);
-            this.textpreco.Name = "textpreco";
-            this.textpreco.Size = new System.Drawing.Size(100, 27);
-            this.textpreco.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label6.Location = new System.Drawing.Point(28, 164);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 21);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Fornecedor:";
-            // 
-            // cbfornecedor
-            // 
-            this.cbfornecedor.BackColor = System.Drawing.SystemColors.Info;
-            this.cbfornecedor.FormattingEnabled = true;
-            this.cbfornecedor.Location = new System.Drawing.Point(138, 156);
-            this.cbfornecedor.Name = "cbfornecedor";
-            this.cbfornecedor.Size = new System.Drawing.Size(308, 29);
-            this.cbfornecedor.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label7.Location = new System.Drawing.Point(536, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 21);
-            this.label7.TabIndex = 11;
             // 
             // FrmProduto
             // 
