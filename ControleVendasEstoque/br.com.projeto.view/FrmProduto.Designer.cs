@@ -317,6 +317,7 @@
             this.btnnovo.TabIndex = 14;
             this.btnnovo.Text = "Novo";
             this.btnnovo.UseVisualStyleBackColor = false;
+            this.btnnovo.Click += new System.EventHandler(this.btnnovo_Click);
             // 
             // FrmProduto
             // 

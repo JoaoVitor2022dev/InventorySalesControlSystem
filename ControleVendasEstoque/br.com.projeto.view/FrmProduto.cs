@@ -38,6 +38,14 @@ namespace ControleVendasEstoque.br.com.projeto.view
             ProdutoDAO dao = new ProdutoDAO();  
 
             dao.CadastrodeProduto(obj);
+
+            new Helpers().LimparTela(this);
+
+        }
+
+        private void btnnovo_Click(object sender, EventArgs e)
+        {
+            new Helpers().LimparTela(this);
         }
     }
 }
