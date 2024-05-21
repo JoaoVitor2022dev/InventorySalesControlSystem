@@ -24,6 +24,9 @@ namespace ControleVendasEstoque.br.com.projeto.view
             cbfornecedor.DataSource = fornecedor.listarFornecedores();
             cbfornecedor.DisplayMember = "nome";
             cbfornecedor.ValueMember = "id";
+
+            ProdutoDAO dao = new ProdutoDAO();
+            TabelaProdutos.DataSource = dao.listarProdutos();
         }
 
         private void btnsalvar_Click(object sender, EventArgs e)
