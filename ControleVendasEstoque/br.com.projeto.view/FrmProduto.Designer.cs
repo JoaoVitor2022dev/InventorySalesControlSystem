@@ -145,7 +145,7 @@
             // textpreco
             // 
             this.textpreco.BackColor = System.Drawing.SystemColors.Info;
-            this.textpreco.Location = new System.Drawing.Point(542, 71);
+            this.textpreco.Location = new System.Drawing.Point(581, 71);
             this.textpreco.Name = "textpreco";
             this.textpreco.Size = new System.Drawing.Size(100, 27);
             this.textpreco.TabIndex = 8;
@@ -156,9 +156,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
             this.label2.Location = new System.Drawing.Point(482, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 21);
+            this.label2.Size = new System.Drawing.Size(93, 21);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Preço:";
+            this.label2.Text = "Preço (R$):";
             // 
             // txtqtd
             // 
@@ -239,6 +239,7 @@
             this.TabelaProdutos.ReadOnly = true;
             this.TabelaProdutos.Size = new System.Drawing.Size(943, 275);
             this.TabelaProdutos.TabIndex = 6;
+            this.TabelaProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaProdutos_CellClick);
             // 
             // txtpesquisar
             // 

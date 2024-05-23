@@ -26,6 +26,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
             cbfornecedor.ValueMember = "id";
 
             ProdutoDAO dao = new ProdutoDAO();
+
             TabelaProdutos.DataSource = dao.listarProdutos();
         }
 
@@ -44,11 +45,25 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             new Helpers().LimparTela(this);
 
+            TabelaProdutos.DataSource = dao.listarProdutos();
         }
 
         private void btnnovo_Click(object sender, EventArgs e)
         {
             new Helpers().LimparTela(this);
+        }
+
+        private void TabelaProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Pegando os dados de um intem selecionado 
+            txtcodigo.Text = TabelaProdutos.CurrentRow.Cells[0].Value.ToString();
+            txtdesc.Text = TabelaProdutos.CurrentRow.Cells[1].Value.ToString();
+            txtqtd.Text = TabelaProdutos.CurrentRow.Cells[2].Value.ToString();
+            textpreco.Text = TabelaProdutos.CurrentRow.Cells[3].Value.ToString();
+            cbfornecedor.Text = TabelaProdutos.CurrentRow.Cells[4].Value.ToString();
+
+            // alterar para guia de dados pessoais 
+            tabProdutos.SelectedTab = tabPage1;
         }
     }
 }

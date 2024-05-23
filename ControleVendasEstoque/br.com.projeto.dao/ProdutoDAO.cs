@@ -2,11 +2,7 @@
 using ControleVendasEstoque.br.com.projeto.model;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.dao
@@ -18,7 +14,6 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         {
             this.conexao = new ConnectionFactory().GetConnection();
         }
-
         #region Cadastrar Produtos 
         public void CadastrodeProduto(Produto obj) 
         {
@@ -45,7 +40,6 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             }
         }
         #endregion
-
         #region Metodo de ListarProdutos
         public DataTable listarProdutos()
         {
