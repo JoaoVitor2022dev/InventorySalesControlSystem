@@ -40,6 +40,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             }
         }
         #endregion
+
         #region Metodo de ListarProdutos
         public DataTable listarProdutos()
         {
@@ -75,6 +76,56 @@ namespace ControleVendasEstoque.br.com.projeto.dao
 
                 MessageBox.Show("Error ao executar o comando sql: " + error);
                 return null;
+            }
+        }
+        #endregion
+
+        #region Metodo de Alterar Produto 
+        public void AlterarProduto(Produto obj)
+        {
+            try
+            {
+                string sql = "UPDATE tb_produtos descricao =@descricao, preco= @preco, qtd_estoque=@qtd , for_id =@for_id  WHERE id=@id ";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@descricao", obj.Descricao);
+                executacmd.Parameters.AddWithValue("@preco", obj.Preco);
+                executacmd.Parameters.AddWithValue("@qtd", obj.Qtdestoque);
+                executacmd.Parameters.AddWithValue("@for_id", obj.for_id);
+                executacmd.Parameters.AddWithValue("@id", obj.Id);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Produto Alterado com sucesso!");
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu um erro " + erro);
+            }
+        }
+        #endregion
+
+        #region Metodo de apagar Produto
+        public void DeletarProduto(Produto obj)
+        {
+            try
+            {
+                string sql = "DELETE tb_produtos WHERE id=@id ";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", obj.Id);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Produto Deletado com sucesso!");
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu um erro " + erro);
             }
         }
         #endregion
