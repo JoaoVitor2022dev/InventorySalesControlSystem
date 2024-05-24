@@ -281,6 +281,7 @@
             this.txteditar.TabIndex = 17;
             this.txteditar.Text = "Editar";
             this.txteditar.UseVisualStyleBackColor = false;
+            this.txteditar.Click += new System.EventHandler(this.txteditar_Click);
             // 
             // btndeletar
             // 
@@ -293,6 +294,7 @@
             this.btndeletar.TabIndex = 16;
             this.btndeletar.Text = "Deletar";
             this.btndeletar.UseVisualStyleBackColor = false;
+            this.btndeletar.Click += new System.EventHandler(this.btndeletar_Click);
             // 
             // btnsalvar
             // 

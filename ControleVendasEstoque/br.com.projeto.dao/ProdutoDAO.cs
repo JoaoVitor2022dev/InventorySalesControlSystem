@@ -85,7 +85,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         {
             try
             {
-                string sql = "UPDATE tb_produtos descricao =@descricao, preco= @preco, qtd_estoque=@qtd , for_id =@for_id  WHERE id=@id ";
+                string sql = "UPDATE tb_produtos SET descricao = @descricao, preco = @preco, qtd_estoque = @qtd, for_id = @for_id WHERE id = @id";
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@descricao", obj.Descricao);
@@ -112,7 +112,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         {
             try
             {
-                string sql = "DELETE tb_produtos WHERE id=@id ";
+                string sql = "DELETE FROM tb_produtos WHERE id = @id";
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", obj.Id);

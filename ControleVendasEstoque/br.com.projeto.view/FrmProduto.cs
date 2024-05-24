@@ -46,6 +46,8 @@ namespace ControleVendasEstoque.br.com.projeto.view
             new Helpers().LimparTela(this);
 
             TabelaProdutos.DataSource = dao.listarProdutos();
+
+            tabProdutos.SelectedTab = tabPage2;
         }
 
         private void btnnovo_Click(object sender, EventArgs e)
@@ -64,6 +66,44 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             // alterar para guia de dados pessoais 
             tabProdutos.SelectedTab = tabPage1;
+        }
+
+        private void btndeletar_Click(object sender, EventArgs e)
+        {
+            Produto obj = new Produto();
+
+            obj.Id = int.Parse(txtcodigo.Text);
+
+            ProdutoDAO dao = new ProdutoDAO();
+
+            dao.DeletarProduto(obj);
+
+            new Helpers().LimparTela(this);
+
+            TabelaProdutos.DataSource = dao.listarProdutos();
+
+            tabProdutos.SelectedTab = tabPage2;
+        }
+
+        private void txteditar_Click(object sender, EventArgs e)
+        {
+            Produto obj = new Produto();
+
+            obj.Descricao = txtdesc.Text;
+            obj.Preco = decimal.Parse(textpreco.Text);
+            obj.Qtdestoque = int.Parse(txtqtd.Text);
+            obj.for_id = int.Parse(cbfornecedor.SelectedValue.ToString());
+            obj.Id = int.Parse(txtcodigo.Text); 
+
+            ProdutoDAO dao = new ProdutoDAO();
+
+            dao.AlterarProduto(obj);
+
+            new Helpers().LimparTela(this);
+
+            TabelaProdutos.DataSource = dao.listarProdutos();
+
+            tabProdutos.SelectedTab = tabPage2;
         }
     }
 }
