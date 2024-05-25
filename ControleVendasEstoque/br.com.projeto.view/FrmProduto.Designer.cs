@@ -234,10 +234,10 @@
             this.TabelaProdutos.AllowUserToAddRows = false;
             this.TabelaProdutos.AllowUserToDeleteRows = false;
             this.TabelaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabelaProdutos.Location = new System.Drawing.Point(8, 87);
+            this.TabelaProdutos.Location = new System.Drawing.Point(195, 70);
             this.TabelaProdutos.Name = "TabelaProdutos";
             this.TabelaProdutos.ReadOnly = true;
-            this.TabelaProdutos.Size = new System.Drawing.Size(943, 275);
+            this.TabelaProdutos.Size = new System.Drawing.Size(538, 275);
             this.TabelaProdutos.TabIndex = 6;
             this.TabelaProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaProdutos_CellClick);
             // 
@@ -245,26 +245,28 @@
             // 
             this.txtpesquisar.BackColor = System.Drawing.Color.MediumBlue;
             this.txtpesquisar.ForeColor = System.Drawing.Color.White;
-            this.txtpesquisar.Location = new System.Drawing.Point(411, 11);
+            this.txtpesquisar.Location = new System.Drawing.Point(603, 12);
             this.txtpesquisar.Name = "txtpesquisar";
             this.txtpesquisar.Size = new System.Drawing.Size(130, 38);
             this.txtpesquisar.TabIndex = 5;
             this.txtpesquisar.Text = "Pesquisar";
             this.txtpesquisar.UseVisualStyleBackColor = false;
+            this.txtpesquisar.Click += new System.EventHandler(this.txtpesquisar_Click);
             // 
             // txtconsulta
             // 
             this.txtconsulta.BackColor = System.Drawing.SystemColors.Info;
-            this.txtconsulta.Location = new System.Drawing.Point(101, 17);
+            this.txtconsulta.Location = new System.Drawing.Point(231, 18);
             this.txtconsulta.Name = "txtconsulta";
             this.txtconsulta.Size = new System.Drawing.Size(291, 27);
             this.txtconsulta.TabIndex = 4;
+            this.txtconsulta.TextChanged += new System.EventHandler(this.txtconsulta_TextChanged);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label18.Location = new System.Drawing.Point(23, 20);
+            this.label18.Location = new System.Drawing.Point(164, 21);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(61, 21);
             this.label18.TabIndex = 3;

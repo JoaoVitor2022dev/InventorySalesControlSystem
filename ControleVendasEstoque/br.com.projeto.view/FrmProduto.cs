@@ -105,5 +105,29 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             tabProdutos.SelectedTab = tabPage2;
         }
+
+        private void txtconsulta_TextChanged(object sender, EventArgs e)
+        {
+            string nome = "%" + txtconsulta.Text + "%";
+
+            ProdutoDAO dao = new ProdutoDAO();
+
+            TabelaProdutos.DataSource = dao.listarProdutosPorNome(nome);
+        }
+
+        private void txtpesquisar_Click(object sender, EventArgs e)
+        {
+            string nome =  txtconsulta.Text;
+
+            ProdutoDAO dao = new ProdutoDAO();
+
+            TabelaProdutos.DataSource = dao.buscarProdutosPorNome(nome);
+
+            if (TabelaProdutos.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhum Fornecedor encontrado.");
+                TabelaProdutos.DataSource = dao.listarProdutos();
+            }
+        }
     }
 }
