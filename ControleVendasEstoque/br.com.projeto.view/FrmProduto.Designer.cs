@@ -61,9 +61,10 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
@@ -74,7 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(47, 71);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
@@ -106,6 +107,7 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.txtcodigo);
+            this.tabPage1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -135,7 +137,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(28, 164);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 21);
@@ -153,7 +155,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(482, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 21);
@@ -171,7 +173,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(18, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 21);
@@ -185,11 +187,12 @@
             this.txtdesc.Name = "txtdesc";
             this.txtdesc.Size = new System.Drawing.Size(324, 27);
             this.txtdesc.TabIndex = 4;
+            this.txtdesc.TextChanged += new System.EventHandler(this.txtdesc_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(40, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 21);
@@ -200,7 +203,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(59, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 21);
@@ -233,6 +236,7 @@
             // 
             this.TabelaProdutos.AllowUserToAddRows = false;
             this.TabelaProdutos.AllowUserToDeleteRows = false;
+            this.TabelaProdutos.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.TabelaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TabelaProdutos.Location = new System.Drawing.Point(195, 70);
             this.TabelaProdutos.Name = "TabelaProdutos";
@@ -243,8 +247,8 @@
             // 
             // txtpesquisar
             // 
-            this.txtpesquisar.BackColor = System.Drawing.Color.MediumBlue;
-            this.txtpesquisar.ForeColor = System.Drawing.Color.White;
+            this.txtpesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtpesquisar.ForeColor = System.Drawing.Color.Black;
             this.txtpesquisar.Location = new System.Drawing.Point(603, 12);
             this.txtpesquisar.Name = "txtpesquisar";
             this.txtpesquisar.Size = new System.Drawing.Size(130, 38);
@@ -328,6 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(984, 654);
             this.Controls.Add(this.txteditar);
             this.Controls.Add(this.btndeletar);

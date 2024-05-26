@@ -129,5 +129,10 @@ namespace ControleVendasEstoque.br.com.projeto.view
                 TabelaProdutos.DataSource = dao.listarProdutos();
             }
         }
+
+        private void txtdesc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
