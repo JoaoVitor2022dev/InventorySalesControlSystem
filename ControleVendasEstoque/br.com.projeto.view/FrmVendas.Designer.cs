@@ -31,27 +31,29 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtcpf = new System.Windows.Forms.MaskedTextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtnome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtdesc = new System.Windows.Forms.TextBox();
+            this.txtcpf = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtcodigo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnremover = new System.Windows.Forms.Button();
+            this.btnadd = new System.Windows.Forms.Button();
+            this.txtqtd = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.textpreco = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtqtd = new System.Windows.Forms.TextBox();
-            this.btnadd = new System.Windows.Forms.Button();
-            this.btnremover = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtcodigo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtdesc = new System.Windows.Forms.TextBox();
             this.TabelaProdutos = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnpagamento = new System.Windows.Forms.Button();
+            this.textdata = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -66,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1032, 157);
             this.panel1.TabIndex = 4;
@@ -86,16 +88,59 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textdata);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtnome);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtcpf);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(0, 166);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 168);
+            this.groupBox1.Size = new System.Drawing.Size(387, 275);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
+            // 
+            // txtnome
+            // 
+            this.txtnome.BackColor = System.Drawing.SystemColors.Info;
+            this.txtnome.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtnome.Location = new System.Drawing.Point(106, 175);
+            this.txtnome.Name = "txtnome";
+            this.txtnome.Size = new System.Drawing.Size(240, 27);
+            this.txtnome.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(27, 175);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 21);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Nome:";
+            // 
+            // txtcpf
+            // 
+            this.txtcpf.BackColor = System.Drawing.SystemColors.Info;
+            this.txtcpf.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtcpf.Location = new System.Drawing.Point(106, 114);
+            this.txtcpf.Mask = "000,000,000-00";
+            this.txtcpf.Name = "txtcpf";
+            this.txtcpf.Size = new System.Drawing.Size(240, 27);
+            this.txtcpf.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(27, 117);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 21);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "CPF:";
             // 
             // groupBox2
             // 
@@ -109,62 +154,87 @@
             this.groupBox2.Controls.Add(this.textpreco);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtdesc);
-            this.groupBox2.Location = new System.Drawing.Point(0, 354);
+            this.groupBox2.Location = new System.Drawing.Point(0, 447);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(387, 331);
+            this.groupBox2.Size = new System.Drawing.Size(387, 341);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Produto";
             // 
-            // txtcpf
+            // label5
             // 
-            this.txtcpf.BackColor = System.Drawing.SystemColors.Info;
-            this.txtcpf.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtcpf.Location = new System.Drawing.Point(91, 42);
-            this.txtcpf.Mask = "000,000,000-00";
-            this.txtcpf.Name = "txtcpf";
-            this.txtcpf.Size = new System.Drawing.Size(240, 27);
-            this.txtcpf.TabIndex = 12;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(22, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 21);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Descrição:";
             // 
-            // label7
+            // txtcodigo
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(12, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 21);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "CPF:";
+            this.txtcodigo.BackColor = System.Drawing.SystemColors.Info;
+            this.txtcodigo.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtcodigo.Location = new System.Drawing.Point(121, 45);
+            this.txtcodigo.Name = "txtcodigo";
+            this.txtcodigo.Size = new System.Drawing.Size(165, 27);
+            this.txtcodigo.TabIndex = 18;
             // 
-            // txtnome
+            // label2
             // 
-            this.txtnome.BackColor = System.Drawing.SystemColors.Info;
-            this.txtnome.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtnome.Location = new System.Drawing.Point(91, 103);
-            this.txtnome.Name = "txtnome";
-            this.txtnome.Size = new System.Drawing.Size(240, 27);
-            this.txtnome.TabIndex = 14;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(43, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 21);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Código:";
             // 
-            // label4
+            // btnremover
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(12, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 21);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Nome:";
+            this.btnremover.BackColor = System.Drawing.Color.Red;
+            this.btnremover.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnremover.ForeColor = System.Drawing.Color.White;
+            this.btnremover.Location = new System.Drawing.Point(190, 273);
+            this.btnremover.Name = "btnremover";
+            this.btnremover.Size = new System.Drawing.Size(178, 42);
+            this.btnremover.TabIndex = 16;
+            this.btnremover.Text = "Remover Item";
+            this.btnremover.UseVisualStyleBackColor = false;
             // 
-            // txtdesc
+            // btnadd
             // 
-            this.txtdesc.BackColor = System.Drawing.SystemColors.Info;
-            this.txtdesc.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtdesc.Location = new System.Drawing.Point(121, 101);
-            this.txtdesc.Name = "txtdesc";
-            this.txtdesc.Size = new System.Drawing.Size(165, 27);
-            this.txtdesc.TabIndex = 8;
+            this.btnadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnadd.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnadd.ForeColor = System.Drawing.Color.White;
+            this.btnadd.Location = new System.Drawing.Point(6, 273);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(178, 42);
+            this.btnadd.TabIndex = 15;
+            this.btnadd.Text = "Adicionar Item";
+            this.btnadd.UseVisualStyleBackColor = false;
+            // 
+            // txtqtd
+            // 
+            this.txtqtd.BackColor = System.Drawing.SystemColors.Info;
+            this.txtqtd.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtqtd.Location = new System.Drawing.Point(121, 213);
+            this.txtqtd.Name = "txtqtd";
+            this.txtqtd.Size = new System.Drawing.Size(100, 27);
+            this.txtqtd.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(2, 216);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 21);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Qtd Estoque:";
             // 
             // textpreco
             // 
@@ -186,80 +256,14 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Preço (R$):";
             // 
-            // label6
+            // txtdesc
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(2, 216);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 21);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Qtd Estoque:";
-            // 
-            // txtqtd
-            // 
-            this.txtqtd.BackColor = System.Drawing.SystemColors.Info;
-            this.txtqtd.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtqtd.Location = new System.Drawing.Point(121, 213);
-            this.txtqtd.Name = "txtqtd";
-            this.txtqtd.Size = new System.Drawing.Size(100, 27);
-            this.txtqtd.TabIndex = 12;
-            // 
-            // btnadd
-            // 
-            this.btnadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnadd.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btnadd.ForeColor = System.Drawing.Color.White;
-            this.btnadd.Location = new System.Drawing.Point(6, 273);
-            this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(178, 42);
-            this.btnadd.TabIndex = 15;
-            this.btnadd.Text = "Adicionar Item";
-            this.btnadd.UseVisualStyleBackColor = false;
-            // 
-            // btnremover
-            // 
-            this.btnremover.BackColor = System.Drawing.Color.Red;
-            this.btnremover.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btnremover.ForeColor = System.Drawing.Color.White;
-            this.btnremover.Location = new System.Drawing.Point(190, 273);
-            this.btnremover.Name = "btnremover";
-            this.btnremover.Size = new System.Drawing.Size(178, 42);
-            this.btnremover.TabIndex = 16;
-            this.btnremover.Text = "Remover Item";
-            this.btnremover.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(43, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 21);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Código:";
-            // 
-            // txtcodigo
-            // 
-            this.txtcodigo.BackColor = System.Drawing.SystemColors.Info;
-            this.txtcodigo.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtcodigo.Location = new System.Drawing.Point(121, 45);
-            this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(165, 27);
-            this.txtcodigo.TabIndex = 18;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(22, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 21);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Descrição:";
+            this.txtdesc.BackColor = System.Drawing.SystemColors.Info;
+            this.txtdesc.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtdesc.Location = new System.Drawing.Point(121, 101);
+            this.txtdesc.Name = "txtdesc";
+            this.txtdesc.Size = new System.Drawing.Size(165, 27);
+            this.txtdesc.TabIndex = 8;
             // 
             // TabelaProdutos
             // 
@@ -279,7 +283,6 @@
             this.groupBox3.Size = new System.Drawing.Size(603, 86);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Cliente";
             // 
             // textBox1
             // 
@@ -306,7 +309,7 @@
             this.btncancelar.BackColor = System.Drawing.Color.Red;
             this.btncancelar.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btncancelar.ForeColor = System.Drawing.Color.White;
-            this.btncancelar.Location = new System.Drawing.Point(662, 830);
+            this.btncancelar.Location = new System.Drawing.Point(725, 830);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(234, 67);
             this.btncancelar.TabIndex = 21;
@@ -318,12 +321,32 @@
             this.btnpagamento.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnpagamento.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnpagamento.ForeColor = System.Drawing.Color.White;
-            this.btnpagamento.Location = new System.Drawing.Point(426, 830);
+            this.btnpagamento.Location = new System.Drawing.Point(474, 830);
             this.btnpagamento.Name = "btnpagamento";
             this.btnpagamento.Size = new System.Drawing.Size(212, 67);
             this.btnpagamento.TabIndex = 20;
             this.btnpagamento.Text = "Pagamento";
             this.btnpagamento.UseVisualStyleBackColor = false;
+            // 
+            // textdata
+            // 
+            this.textdata.BackColor = System.Drawing.SystemColors.Info;
+            this.textdata.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.textdata.Location = new System.Drawing.Point(106, 42);
+            this.textdata.Name = "textdata";
+            this.textdata.Size = new System.Drawing.Size(240, 27);
+            this.textdata.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(33, 42);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 21);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Data:";
             // 
             // FrmVendas
             // 
@@ -379,5 +402,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Button btnpagamento;
+        private System.Windows.Forms.TextBox textdata;
+        private System.Windows.Forms.Label label9;
     }
 }
