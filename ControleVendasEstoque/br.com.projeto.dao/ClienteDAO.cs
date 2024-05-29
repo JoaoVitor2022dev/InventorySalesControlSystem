@@ -1,6 +1,7 @@
 ﻿using ControleVendasEstoque.br.com.projeto.conexao;
 using ControleVendasEstoque.br.com.projeto.model;
 using MySql.Data.MySqlClient;
+using Mysqlx;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -217,6 +218,46 @@ namespace ControleVendasEstoque.br.com.projeto.dao
 
                 MessageBox.Show("Error ao executar o comando sql: " + error);
                 return null;
+            }
+        }
+        #endregion
+
+        #region Metodo que retorna um cliente por cpf
+        public Cliente RetornaClientePorCpf(string cpf) 
+        {
+            try
+            {
+                // criar o comando sql 
+                Cliente obj = new Cliente();
+
+                string sql = @"SELECT * FROM tb_clientes WHERE cpf = @cpf";
+
+                // 2 - organizar o comando sql no executar 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@cpf", cpf);
+
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    obj.codigo = reader.GetInt32("Id");
+                    obj.name = reader.GetString("nome"); 
+                }
+                else 
+                {
+                    MessageBox.Show("Cliente não encontrado!");
+
+                    return null;
+                }
+
+                return obj; 
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Acontenceu um error: " + error);
+                return null; 
             }
         }
         #endregion
