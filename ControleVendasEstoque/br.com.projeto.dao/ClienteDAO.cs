@@ -252,6 +252,8 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                     return null;
                 }
 
+                conexao.Close();
+
                 return obj; 
             }
             catch (Exception error)

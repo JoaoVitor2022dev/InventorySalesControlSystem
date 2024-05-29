@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textdata = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtnome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtcpf = new System.Windows.Forms.MaskedTextBox();
@@ -52,8 +54,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnpagamento = new System.Windows.Forms.Button();
-            this.textdata = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -101,6 +101,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
+            // textdata
+            // 
+            this.textdata.BackColor = System.Drawing.SystemColors.Info;
+            this.textdata.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.textdata.Location = new System.Drawing.Point(106, 48);
+            this.textdata.Name = "textdata";
+            this.textdata.Size = new System.Drawing.Size(240, 27);
+            this.textdata.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(33, 48);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 21);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Data:";
+            // 
             // txtnome
             // 
             this.txtnome.BackColor = System.Drawing.SystemColors.Info;
@@ -130,6 +150,7 @@
             this.txtcpf.Name = "txtcpf";
             this.txtcpf.Size = new System.Drawing.Size(240, 27);
             this.txtcpf.TabIndex = 12;
+            this.txtcpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcpf_KeyPress);
             // 
             // label7
             // 
@@ -327,26 +348,6 @@
             this.btnpagamento.TabIndex = 20;
             this.btnpagamento.Text = "Pagamento";
             this.btnpagamento.UseVisualStyleBackColor = false;
-            // 
-            // textdata
-            // 
-            this.textdata.BackColor = System.Drawing.SystemColors.Info;
-            this.textdata.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.textdata.Location = new System.Drawing.Point(106, 42);
-            this.textdata.Name = "textdata";
-            this.textdata.Size = new System.Drawing.Size(240, 27);
-            this.textdata.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(33, 42);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 21);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Data:";
             // 
             // FrmVendas
             // 

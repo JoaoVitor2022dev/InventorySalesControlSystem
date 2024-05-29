@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ControleVendasEstoque.br.com.projeto.dao;
+using ControleVendasEstoque.br.com.projeto.model;
+using MySqlX.XDevAPI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,10 @@ namespace ControleVendasEstoque.br.com.projeto.view
 {
     public partial class FrmVendas : Form
     {
+
+        Cliente cliente = new Cliente();
+        ClienteDAO cdao = new ClienteDAO();
+
         public FrmVendas()
         {
             InitializeComponent();
@@ -25,6 +32,16 @@ namespace ControleVendasEstoque.br.com.projeto.view
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtcpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                cliente = cdao.RetornaClientePorCpf(txtcpf.Text);
+
+                txtnome.Text = cliente.name; 
+            }
         }
     }
 }
