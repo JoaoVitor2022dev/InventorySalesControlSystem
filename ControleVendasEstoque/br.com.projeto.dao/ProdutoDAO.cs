@@ -222,5 +222,43 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             }
         }
         #endregion
+
+        #region Método que retornar produto por codigo 
+        public Produto RetornaProdutoPerCodigo(int id) 
+        {
+            try
+            {
+                // 1 - comando sql 
+
+                string sql = @"SELECT * FROM tb_produtos WHERE id = @id"; 
+
+                MySqlCommand executedcmd = new MySqlCommand(sql, conexao);
+                executedcmd.Parameters.AddWithValue("@id", id);
+
+                MySqlDataReader reader = executedcmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Produto produto = new Produto();
+
+                    produto.Id = reader.GetInt32("id"); 
+                    produto.Descricao = reader.GetString("descricao");
+                    produto.Preco = reader.GetDecimal("preco");
+
+                    return produto;
+                } 
+                else
+                {
+                    MessageBox.Show("Nenhum produto encontrado com esse codigo");
+                    return null; 
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Aconteceu o erro: " + err);
+                return null; 
+            }
+        }
+        #endregion
     }
 }

@@ -50,10 +50,10 @@
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.TabelaProdutos = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnpagamento = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -299,20 +299,11 @@
             // 
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(405, 702);
+            this.groupBox3.Location = new System.Drawing.Point(405, 701);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(603, 86);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.textBox1.Location = new System.Drawing.Point(196, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 27);
-            this.textBox1.TabIndex = 14;
             // 
             // label8
             // 
@@ -348,6 +339,15 @@
             this.btnpagamento.TabIndex = 20;
             this.btnpagamento.Text = "Pagamento";
             this.btnpagamento.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.textBox1.Location = new System.Drawing.Point(193, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(240, 27);
+            this.textBox1.TabIndex = 15;
             // 
             // FrmVendas
             // 
@@ -399,11 +399,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView TabelaProdutos;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Button btnpagamento;
         private System.Windows.Forms.TextBox textdata;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
