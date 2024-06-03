@@ -223,43 +223,42 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         #endregion
 
         #region Metodo que retorna um cliente por cpf
-        public Cliente RetornaClientePorCpf(string cpf) 
+        public Cliente RetornaClientePorCpf(string cpf)
         {
             try
             {
-                // criar o comando sql 
                 Cliente obj = new Cliente();
 
+                // criar o comando sql 
                 string sql = @"SELECT * FROM tb_clientes WHERE cpf = @cpf";
 
-                // 2 - organizar o comando sql no executar 
-                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue("@cpf", cpf);
+                MySqlCommand executedcmd = new MySqlCommand(sql, conexao);
+                executedcmd.Parameters.AddWithValue("@cpf", cpf);
 
                 conexao.Open();
 
-                MySqlDataReader reader = executacmd.ExecuteReader();
+                MySqlDataReader reader = executedcmd.ExecuteReader();
 
                 if (reader.Read())
                 {
                     obj.codigo = reader.GetInt32("Id");
-                    obj.name = reader.GetString("nome"); 
+                    obj.name = reader.GetString("nome");
                 }
-                else 
+                else
                 {
                     MessageBox.Show("Cliente não encontrado!");
-
+                    conexao.Close();
                     return null;
                 }
-
                 conexao.Close();
 
-                return obj; 
+                return obj;
             }
             catch (Exception error)
             {
-                MessageBox.Show("Acontenceu um error: " + error);
-                return null; 
+                MessageBox.Show("Aconteceu um erro: " + error);
+                conexao.Close();
+                return null;
             }
         }
         #endregion

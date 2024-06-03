@@ -230,28 +230,33 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             {
                 // 1 - comando sql 
 
+                Produto produto = new Produto();
+
                 string sql = @"SELECT * FROM tb_produtos WHERE id = @id"; 
 
                 MySqlCommand executedcmd = new MySqlCommand(sql, conexao);
                 executedcmd.Parameters.AddWithValue("@id", id);
 
+                conexao.Open();
+
                 MySqlDataReader reader = executedcmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    Produto produto = new Produto();
-
                     produto.Id = reader.GetInt32("id"); 
                     produto.Descricao = reader.GetString("descricao");
                     produto.Preco = reader.GetDecimal("preco");
-
-                    return produto;
                 } 
                 else
                 {
                     MessageBox.Show("Nenhum produto encontrado com esse codigo");
+                    conexao.Close();
                     return null; 
                 }
+
+                conexao.Close(); 
+
+                return produto;
             }
             catch (Exception err)
             {

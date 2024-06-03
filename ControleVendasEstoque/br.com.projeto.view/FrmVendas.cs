@@ -19,6 +19,9 @@ namespace ControleVendasEstoque.br.com.projeto.view
         Cliente cliente = new Cliente();
         ClienteDAO cdao = new ClienteDAO();
 
+        Produto produto = new Produto();
+        ProdutoDAO pdao = new ProdutoDAO();
+
         public FrmVendas()
         {
             InitializeComponent();
@@ -41,6 +44,17 @@ namespace ControleVendasEstoque.br.com.projeto.view
                 cliente = cdao.RetornaClientePorCpf(txtcpf.Text);
 
                 txtnome.Text = cliente.name; 
+            }
+        }
+
+        private void txtcodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                produto = pdao.RetornaProdutoPerCodigo(int.Parse(txtcodigo.Text));
+
+                txtdesc.Text = produto.Descricao;
+                textpreco.Text = produto.Preco.ToString();
             }
         }
     }
