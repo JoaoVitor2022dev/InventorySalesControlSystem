@@ -1,14 +1,7 @@
 ﻿using ControleVendasEstoque.br.com.projeto.dao;
 using ControleVendasEstoque.br.com.projeto.model;
-using MySqlX.XDevAPI;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.view
@@ -22,19 +15,34 @@ namespace ControleVendasEstoque.br.com.projeto.view
         Produto produto = new Produto();
         ProdutoDAO pdao = new ProdutoDAO();
 
+        // variaveis 
+        int qtd;
+        decimal preco;
+        decimal subtotal, total; 
+
+        // Carrinho 
+        DataTable carrinho = new DataTable();   
+
+
         public FrmVendas()
         {
             InitializeComponent();
+
+            carrinho.Columns.Add("Codigo", typeof(string));
+            carrinho.Columns.Add("Produto", typeof(string));
+            carrinho.Columns.Add("Qtd", typeof(int));
+            carrinho.Columns.Add("Preço", typeof(decimal));
+            carrinho.Columns.Add("Subtotal", typeof(decimal));
+
+            TabelaProdutos.DataSource = carrinho;
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void txtcpf_KeyPress(object sender, KeyPressEventArgs e)
@@ -56,6 +64,11 @@ namespace ControleVendasEstoque.br.com.projeto.view
                 txtdesc.Text = produto.Descricao;
                 textpreco.Text = produto.Preco.ToString();
             }
+        }
+
+        private void FrmVendas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
