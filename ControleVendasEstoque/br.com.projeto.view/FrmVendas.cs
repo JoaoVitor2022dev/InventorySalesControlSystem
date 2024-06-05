@@ -2,6 +2,7 @@
 using ControleVendasEstoque.br.com.projeto.model;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.view
@@ -66,9 +67,33 @@ namespace ControleVendasEstoque.br.com.projeto.view
             }
         }
 
+        private void btnadd_Click(object sender, EventArgs e)
+        {
+            qtd = int.Parse(txtqtd.Text);
+            preco = decimal.Parse(textpreco.Text); 
+
+            subtotal = qtd * preco;
+
+            total += subtotal;
+
+            // adicionando produto no carrinho 
+            carrinho.Rows.Add(int.Parse(txtcodigo.Text), txtdesc.Text, qtd, preco, subtotal);
+
+            // adicionar o valor no total 
+            txttotal.Text = total.ToString();
+
+            // limpando os campos 
+            txtcodigo.Clear();
+            txtdesc.Clear();
+            txtqtd.Clear();
+            textpreco.Clear();
+
+            txtcodigo.Focus(); 
+        }
+
         private void FrmVendas_Load(object sender, EventArgs e)
         {
-
+            TabelaProdutos.DefaultCellStyle.ForeColor = Color.Black;
         }
     }
 }

@@ -246,6 +246,10 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                     produto.Id = reader.GetInt32("id"); 
                     produto.Descricao = reader.GetString("descricao");
                     produto.Preco = reader.GetDecimal("preco");
+
+                    conexao.Close();
+
+                    return produto;
                 } 
                 else
                 {
@@ -253,10 +257,6 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                     conexao.Close();
                     return null; 
                 }
-
-                conexao.Close(); 
-
-                return produto;
             }
             catch (Exception err)
             {

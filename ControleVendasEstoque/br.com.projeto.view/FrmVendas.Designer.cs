@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -50,7 +51,7 @@
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.TabelaProdutos = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txttotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnpagamento = new System.Windows.Forms.Button();
@@ -237,6 +238,7 @@
             this.btnadd.TabIndex = 15;
             this.btnadd.Text = "Adicionar Item";
             this.btnadd.UseVisualStyleBackColor = false;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // txtqtd
             // 
@@ -244,7 +246,7 @@
             this.txtqtd.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtqtd.Location = new System.Drawing.Point(159, 254);
             this.txtqtd.Name = "txtqtd";
-            this.txtqtd.Size = new System.Drawing.Size(100, 27);
+            this.txtqtd.Size = new System.Drawing.Size(165, 27);
             this.txtqtd.TabIndex = 12;
             // 
             // label6
@@ -264,7 +266,7 @@
             this.textpreco.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textpreco.Location = new System.Drawing.Point(159, 201);
             this.textpreco.Name = "textpreco";
-            this.textpreco.Size = new System.Drawing.Size(115, 27);
+            this.textpreco.Size = new System.Drawing.Size(165, 27);
             this.textpreco.TabIndex = 10;
             // 
             // label3
@@ -293,17 +295,25 @@
             this.TabelaProdutos.AllowUserToDeleteRows = false;
             this.TabelaProdutos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.TabelaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabelaProdutos.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.TabelaProdutos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.TabelaProdutos.Location = new System.Drawing.Point(474, 174);
             this.TabelaProdutos.Name = "TabelaProdutos";
             this.TabelaProdutos.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TabelaProdutos.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.TabelaProdutos.Size = new System.Drawing.Size(534, 511);
             this.TabelaProdutos.TabIndex = 7;
             this.TabelaProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.txttotal);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(474, 701);
             this.groupBox3.Name = "groupBox3";
@@ -311,14 +321,14 @@
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             // 
-            // textBox1
+            // txttotal
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.textBox1.Location = new System.Drawing.Point(193, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 27);
-            this.textBox1.TabIndex = 15;
+            this.txttotal.BackColor = System.Drawing.SystemColors.Info;
+            this.txttotal.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txttotal.Location = new System.Drawing.Point(193, 21);
+            this.txttotal.Name = "txttotal";
+            this.txttotal.Size = new System.Drawing.Size(240, 27);
+            this.txttotal.TabIndex = 15;
             // 
             // label8
             // 
@@ -411,6 +421,6 @@
         private System.Windows.Forms.Button btnpagamento;
         private System.Windows.Forms.TextBox textdata;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txttotal;
     }
 }
