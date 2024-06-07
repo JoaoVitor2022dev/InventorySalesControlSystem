@@ -91,6 +91,32 @@ namespace ControleVendasEstoque.br.com.projeto.view
             txtcodigo.Focus(); 
         }
 
+        private void btnremover_Click(object sender, EventArgs e)
+        {
+            // botão remover item 
+
+            decimal subproduto = decimal.Parse(TabelaProdutos.CurrentRow.Cells[4].Value.ToString());
+
+
+            // selecionando a tabela 
+            int index = TabelaProdutos.CurrentRow.Index;
+
+            // aqui selecionando a limha
+            DataRow linha = carrinho.Rows[index];
+
+            carrinho.Rows.Remove(linha);
+
+            carrinho.AcceptChanges();
+
+            // subtração do total 
+
+            total -= subtotal;
+
+            txttotal.Text = total.ToString();
+
+            MessageBox.Show("Item Removido do carrinho com sucesso!");
+        }
+
         private void FrmVendas_Load(object sender, EventArgs e)
         {
             TabelaProdutos.DefaultCellStyle.ForeColor = Color.Black;
