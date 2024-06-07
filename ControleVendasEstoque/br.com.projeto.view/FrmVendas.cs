@@ -116,7 +116,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             MessageBox.Show("Item Removido do carrinho com sucesso!");
         }
-
         private void FrmVendas_Load(object sender, EventArgs e)
         {
             TabelaProdutos.DefaultCellStyle.ForeColor = Color.Black;

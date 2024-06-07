@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -126,7 +126,7 @@
             // 
             this.txtnome.BackColor = System.Drawing.SystemColors.Info;
             this.txtnome.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtnome.Location = new System.Drawing.Point(159, 175);
+            this.txtnome.Location = new System.Drawing.Point(159, 162);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(240, 27);
             this.txtnome.TabIndex = 14;
@@ -136,7 +136,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(80, 175);
+            this.label4.Location = new System.Drawing.Point(86, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 21);
             this.label4.TabIndex = 13;
@@ -146,7 +146,7 @@
             // 
             this.txtcpf.BackColor = System.Drawing.SystemColors.Info;
             this.txtcpf.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtcpf.Location = new System.Drawing.Point(159, 114);
+            this.txtcpf.Location = new System.Drawing.Point(159, 104);
             this.txtcpf.Mask = "000,000,000-00";
             this.txtcpf.Name = "txtcpf";
             this.txtcpf.Size = new System.Drawing.Size(240, 27);
@@ -158,7 +158,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(97, 114);
+            this.label7.Location = new System.Drawing.Point(97, 104);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 21);
             this.label7.TabIndex = 11;
@@ -300,14 +300,14 @@
             this.TabelaProdutos.Location = new System.Drawing.Point(474, 174);
             this.TabelaProdutos.Name = "TabelaProdutos";
             this.TabelaProdutos.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TabelaProdutos.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TabelaProdutos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.TabelaProdutos.Size = new System.Drawing.Size(534, 511);
             this.TabelaProdutos.TabIndex = 7;
             this.TabelaProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
