@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleVendasEstoque.br.com.projeto.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,19 @@ namespace ControleVendasEstoque.br.com.projeto.view
 {
     public partial class FrmPagamentos : Form
     {
-        public FrmPagamentos()
+        Cliente cliente = new Cliente();
+        DataTable carrinho = new DataTable();
+
+        public FrmPagamentos(DataTable carrinho, Cliente cliente)
         {
+            this.cliente = cliente;
+            this.carrinho = carrinho;
             InitializeComponent();
+        }
+
+        private void btnfinalizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -160,6 +160,7 @@
             this.btnfinalizar.TabIndex = 27;
             this.btnfinalizar.Text = "Finalizar Venda";
             this.btnfinalizar.UseVisualStyleBackColor = false;
+            this.btnfinalizar.Click += new System.EventHandler(this.btnfinalizar_Click);
             // 
             // FrmPagamentos
             // 

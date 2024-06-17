@@ -69,26 +69,33 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            qtd = int.Parse(txtqtd.Text);
-            preco = decimal.Parse(textpreco.Text); 
+            try
+            {
+                qtd = int.Parse(txtqtd.Text);
+                preco = decimal.Parse(textpreco.Text);
 
-            subtotal = qtd * preco;
+                subtotal = qtd * preco;
 
-            total += subtotal;
+                total += subtotal;
 
-            // adicionando produto no carrinho 
-            carrinho.Rows.Add(int.Parse(txtcodigo.Text), txtdesc.Text, qtd, preco, subtotal);
+                // adicionando produto no carrinho 
+                carrinho.Rows.Add(int.Parse(txtcodigo.Text), txtdesc.Text, qtd, preco, subtotal);
 
-            // adicionar o valor no total 
-            txttotal.Text = total.ToString();
+                // adicionar o valor no total 
+                txttotal.Text = total.ToString();
 
-            // limpando os campos 
-            txtcodigo.Clear();
-            txtdesc.Clear();
-            txtqtd.Clear();
-            textpreco.Clear();
+                // limpando os campos 
+                txtcodigo.Clear();
+                txtdesc.Clear();
+                txtqtd.Clear();
+                textpreco.Clear();
 
-            txtcodigo.Focus(); 
+                txtcodigo.Focus();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Digite o codigo do produto");
+            }
         }
 
         private void btnremover_Click(object sender, EventArgs e)
@@ -116,6 +123,19 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             MessageBox.Show("Item Removido do carrinho com sucesso!");
         }
+
+        private void btnpagamento_Click(object sender, EventArgs e)
+        {
+            // pbotoa de pagamento 
+            FrmPagamentos tela = new FrmPagamentos(carrinho, cliente);
+
+            tela.txttotal.Text = total.ToString(); 
+
+
+            tela.ShowDialog();
+
+        }
+
         private void FrmVendas_Load(object sender, EventArgs e)
         {
             TabelaProdutos.DefaultCellStyle.ForeColor = Color.Black;
