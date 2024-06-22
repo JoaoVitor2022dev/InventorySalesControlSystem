@@ -101,9 +101,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
         private void btnremover_Click(object sender, EventArgs e)
         {
             // botão remover item 
-
             decimal subproduto = decimal.Parse(TabelaProdutos.CurrentRow.Cells[4].Value.ToString());
-
 
             // selecionando a tabela 
             int index = TabelaProdutos.CurrentRow.Index;
@@ -126,19 +124,21 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
         private void btnpagamento_Click(object sender, EventArgs e)
         {
-            // pbotoa de pagamento 
-            FrmPagamentos tela = new FrmPagamentos(carrinho, cliente);
+            // botoa de pagamento
+            DateTime dataAtual = DateTime.Parse(textdata.Text); 
+
+            FrmPagamentos tela = new FrmPagamentos(carrinho, cliente, dataAtual);
 
             tela.txttotal.Text = total.ToString(); 
 
-
             tela.ShowDialog();
-
         }
 
         private void FrmVendas_Load(object sender, EventArgs e)
         {
             TabelaProdutos.DefaultCellStyle.ForeColor = Color.Black;
+
+            textdata.Text = DateTime.Now.ToShortDateString();
         }
     }
 }
