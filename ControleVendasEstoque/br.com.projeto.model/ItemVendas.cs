@@ -1,6 +1,6 @@
 ﻿namespace ControleVendasEstoque.br.com.projeto.model
 {
-    internal class ItemVendas
+    public class ItemVendas
     {
         public int Id { get; set; }
         public int Vendas_Id { get; set; }

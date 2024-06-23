@@ -2,10 +2,6 @@
 using ControleVendasEstoque.br.com.projeto.model;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.dao
@@ -17,7 +13,6 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         {
             this.conexao = new ConnectionFactory().GetConnection();
         }
-
         #region Metodo de registrar uma venda
         public void RegistrarVenda(Vendas obj) 
         {
