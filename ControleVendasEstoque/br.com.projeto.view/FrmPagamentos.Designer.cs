@@ -39,6 +39,8 @@
             this.txttotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnfinalizar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textobs = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(675, 157);
+            this.panel1.Size = new System.Drawing.Size(1363, 157);
             this.panel1.TabIndex = 5;
             // 
             // label1
@@ -60,7 +62,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(179, 48);
+            this.label1.Location = new System.Drawing.Point(554, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(297, 56);
@@ -71,7 +73,7 @@
             // 
             this.txtdinheiro.BackColor = System.Drawing.SystemColors.Info;
             this.txtdinheiro.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdinheiro.Location = new System.Drawing.Point(299, 195);
+            this.txtdinheiro.Location = new System.Drawing.Point(299, 183);
             this.txtdinheiro.Name = "txtdinheiro";
             this.txtdinheiro.Size = new System.Drawing.Size(307, 50);
             this.txtdinheiro.TabIndex = 20;
@@ -79,11 +81,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(43, 195);
+            this.label2.Location = new System.Drawing.Point(115, 183);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(250, 42);
+            this.label2.Size = new System.Drawing.Size(178, 30);
             this.label2.TabIndex = 19;
             this.label2.Text = "Dinheiro (R$): ";
             // 
@@ -99,11 +101,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(134, 268);
+            this.label3.Location = new System.Drawing.Point(167, 265);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 42);
+            this.label3.Size = new System.Drawing.Size(110, 30);
             this.label3.TabIndex = 21;
             this.label3.Text = "Cartão: ";
             // 
@@ -120,11 +122,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(161, 335);
+            this.label4.Location = new System.Drawing.Point(184, 335);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 42);
+            this.label4.Size = new System.Drawing.Size(93, 30);
             this.label4.TabIndex = 23;
             this.label4.Text = "Troco: ";
             // 
@@ -141,11 +143,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(171, 409);
+            this.label5.Location = new System.Drawing.Point(194, 409);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 42);
+            this.label5.Size = new System.Drawing.Size(77, 30);
             this.label5.TabIndex = 25;
             this.label5.Text = "Total:";
             // 
@@ -154,7 +156,7 @@
             this.btnfinalizar.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnfinalizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnfinalizar.Location = new System.Drawing.Point(161, 478);
+            this.btnfinalizar.Location = new System.Drawing.Point(539, 477);
             this.btnfinalizar.Name = "btnfinalizar";
             this.btnfinalizar.Size = new System.Drawing.Size(332, 67);
             this.btnfinalizar.TabIndex = 27;
@@ -162,11 +164,35 @@
             this.btnfinalizar.UseVisualStyleBackColor = false;
             this.btnfinalizar.Click += new System.EventHandler(this.btnfinalizar_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(653, 183);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(179, 30);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Observações:";
+            // 
+            // textobs
+            // 
+            this.textobs.AcceptsReturn = true;
+            this.textobs.BackColor = System.Drawing.SystemColors.Info;
+            this.textobs.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textobs.Location = new System.Drawing.Point(838, 183);
+            this.textobs.Multiline = true;
+            this.textobs.Name = "textobs";
+            this.textobs.Size = new System.Drawing.Size(475, 276);
+            this.textobs.TabIndex = 29;
+            // 
             // FrmPagamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 571);
+            this.ClientSize = new System.Drawing.Size(1363, 571);
+            this.Controls.Add(this.textobs);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnfinalizar);
             this.Controls.Add(this.txttotal);
             this.Controls.Add(this.label5);
@@ -179,6 +205,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmPagamentos";
             this.Text = "Tela Pagamentos";
+            this.Load += new System.EventHandler(this.FrmPagamentos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -199,5 +226,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnfinalizar;
         public System.Windows.Forms.TextBox txttotal;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textobs;
     }
 }
