@@ -32,7 +32,6 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Venda registrada com sucesso");
                 conexao.Close();
 
             }
@@ -44,7 +43,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         #endregion
 
         #region Metodo que retorna o id ultimo da venda 
-        public int RetornarVenda() 
+        public int RetornarIdUltimaVenda() 
         {
             try
             {

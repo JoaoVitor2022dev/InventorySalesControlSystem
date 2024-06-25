@@ -81,11 +81,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(115, 183);
+            this.label2.Location = new System.Drawing.Point(128, 191);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 30);
+            this.label2.Size = new System.Drawing.Size(149, 24);
             this.label2.TabIndex = 19;
             this.label2.Text = "Dinheiro (R$): ";
             // 
@@ -101,11 +101,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(167, 265);
+            this.label3.Location = new System.Drawing.Point(184, 265);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 30);
+            this.label3.Size = new System.Drawing.Size(93, 24);
             this.label3.TabIndex = 21;
             this.label3.Text = "Cartão: ";
             // 
@@ -122,11 +122,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(184, 335);
+            this.label4.Location = new System.Drawing.Point(195, 335);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 30);
+            this.label4.Size = new System.Drawing.Size(77, 24);
             this.label4.TabIndex = 23;
             this.label4.Text = "Troco: ";
             // 
@@ -167,11 +167,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(653, 183);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(179, 30);
+            this.label6.Size = new System.Drawing.Size(152, 24);
             this.label6.TabIndex = 28;
             this.label6.Text = "Observações:";
             // 
@@ -179,7 +179,7 @@
             // 
             this.textobs.AcceptsReturn = true;
             this.textobs.BackColor = System.Drawing.SystemColors.Info;
-            this.textobs.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textobs.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textobs.Location = new System.Drawing.Point(838, 183);
             this.textobs.Multiline = true;
             this.textobs.Name = "textobs";

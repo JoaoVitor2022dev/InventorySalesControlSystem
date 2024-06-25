@@ -32,9 +32,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Item registrada com sucesso");
                 conexao.Close();
-
             }
             catch (Exception err)
             {

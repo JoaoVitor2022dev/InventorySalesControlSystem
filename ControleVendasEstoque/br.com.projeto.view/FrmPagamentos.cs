@@ -61,16 +61,29 @@ namespace ControleVendasEstoque.br.com.projeto.view
                     txttroco.Text = troco.ToString();
                     vdao.RegistrarVenda(vendas);
 
+                    // cadastrar item de venda 
 
+                    foreach (DataRow linha in carrinho.Rows)
+                    {
+                        ItemVendas Item = new ItemVendas();
+
+                        Item.Vendas_Id = vdao.RetornarIdUltimaVenda();
+                        Item.Produto_id = int.Parse(linha["Codigo"].ToString());
+                        Item.Qtd = int.Parse(linha["Qtd"].ToString());
+                        Item.Subtotal = decimal.Parse(linha["Subtotal"].ToString());
+
+                        ItemVendasDAO itemDAO = new ItemVendasDAO();
+
+                        itemDAO.CadastrarItemdeVenda(Item);
+
+                        MessageBox.Show("Venda registrada com sucesso.");
+                    }
                 }
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Ocorreu um erro na sua venda");
             }
-
-
         }
 
         private void FrmPagamentos_Load(object sender, EventArgs e)
@@ -78,8 +91,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
             txttroco.Text = "0.00";
             txtdinheiro.Text = "0.00";
             txtcartao.Text = "0.00"; 
-
-
         }
     }
 }
