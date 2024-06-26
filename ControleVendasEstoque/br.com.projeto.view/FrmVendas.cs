@@ -52,7 +52,16 @@ namespace ControleVendasEstoque.br.com.projeto.view
             {
                 cliente = cdao.RetornaClientePorCpf(txtcpf.Text);
 
-                txtnome.Text = cliente.name; 
+                if (cliente != null)
+                {
+                    txtnome.Text = cliente.name;
+                } 
+                else
+                {
+                    txtcpf.Clear();
+                    txtcpf.Focus(); 
+                }    
+
             }
         }
 
@@ -62,8 +71,16 @@ namespace ControleVendasEstoque.br.com.projeto.view
             {
                 produto = pdao.RetornaProdutoPerCodigo(int.Parse(txtcodigo.Text));
 
-                txtdesc.Text = produto.Descricao;
-                textpreco.Text = produto.Preco.ToString();
+                if (produto != null)
+                {
+                    txtdesc.Text = produto.Descricao;
+                    textpreco.Text = produto.Preco.ToString();
+                } 
+                else 
+                {
+                    txtcodigo.Clear();      
+                    txtcodigo.Focus();
+                }
             }
         }
 
@@ -132,6 +149,13 @@ namespace ControleVendasEstoque.br.com.projeto.view
             tela.txttotal.Text = total.ToString(); 
 
             tela.ShowDialog();
+
+            this.Dispose();
+        }
+
+        private void txtcpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
 
         private void FrmVendas_Load(object sender, EventArgs e)

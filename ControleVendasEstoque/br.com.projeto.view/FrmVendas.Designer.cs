@@ -151,6 +151,7 @@
             this.txtcpf.Name = "txtcpf";
             this.txtcpf.Size = new System.Drawing.Size(240, 27);
             this.txtcpf.TabIndex = 12;
+            this.txtcpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtcpf_MaskInputRejected);
             this.txtcpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcpf_KeyPress);
             // 
             // label7
