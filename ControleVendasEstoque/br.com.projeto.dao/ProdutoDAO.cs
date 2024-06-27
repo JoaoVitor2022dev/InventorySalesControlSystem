@@ -265,5 +265,64 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             }
         }
         #endregion
+
+        #region Metodo que baixa o estoque 
+        public void BaixaEstoque(int idproduto, int qtdestoque)
+        {
+            try
+            {
+                // 1 - primeiro paso criar o comando sql 
+                string sql = "UPDATE tb_produtos SET qtd_estoque = @qtd, WHERE id = @id";
+
+                // organizar e arrumar o comando sql 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", idproduto);
+                executacmd.Parameters.AddWithValue("@qtd", qtdestoque);
+
+                // abrir a conexao e executar o comando 
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                conexao.Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Aconteceu um erro: {err}");
+                conexao.Close();
+            }
+        }
+        #endregion
+
+        #region Metodo de retornar o estoque atual de produtos
+        public int RetornarEstoqueAtualProduto(int idproduto)
+        {
+            try
+            {
+                string sql = @"SELECT qtd_estoque FROM tb_produtos WHERE id = @id";
+                int qtd_estoque = 0;
+
+                // organizar e arrumar o comando sql 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", idproduto);
+
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    qtd_estoque = reader.GetInt32("qtd_estoque");
+                    conexao.Close();
+                }
+
+                return qtd_estoque;
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Aconteceu um erro: {err}"); 
+                return 0;
+            }
+        }
+        #endregion
     }
 }
