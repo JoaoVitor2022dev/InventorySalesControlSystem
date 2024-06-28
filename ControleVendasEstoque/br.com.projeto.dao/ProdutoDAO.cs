@@ -272,12 +272,12 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             try
             {
                 // 1 - primeiro paso criar o comando sql 
-                string sql = "UPDATE tb_produtos SET qtd_estoque = @qtd, WHERE id = @id";
+                string sql = "UPDATE tb_produtos SET qtd_estoque = @qtd WHERE id = @id";
 
                 // organizar e arrumar o comando sql 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue("@id", idproduto);
                 executacmd.Parameters.AddWithValue("@qtd", qtdestoque);
+                executacmd.Parameters.AddWithValue("@id", idproduto);
 
                 // abrir a conexao e executar o comando 
                 conexao.Open();

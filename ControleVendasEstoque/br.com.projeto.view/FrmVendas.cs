@@ -146,11 +146,9 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             FrmPagamentos tela = new FrmPagamentos(carrinho, cliente, dataAtual);
 
-            tela.txttotal.Text = total.ToString(); 
+            tela.txttotal.Text = total.ToString();
 
-            tela.ShowDialog();
-
-            this.Dispose();
+            tela.ShowDialog(); 
         }
 
         private void txtcpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

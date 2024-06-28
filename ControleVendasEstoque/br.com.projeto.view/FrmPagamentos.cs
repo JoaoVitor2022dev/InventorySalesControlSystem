@@ -27,6 +27,10 @@ namespace ControleVendasEstoque.br.com.projeto.view
                 // finalizar venda 
                 decimal v_dinheiro, v_cartao, troco, totalpago, total;
 
+                int qtd_estoque, qtd_comprada, estoque_atualizado;
+
+                ProdutoDAO produtoADao = new ProdutoDAO();
+
                 v_dinheiro = decimal.Parse(txtdinheiro.Text);
                 v_cartao = decimal.Parse(txtcartao.Text); 
                 total = decimal.Parse(txttotal.Text);
@@ -66,6 +70,13 @@ namespace ControleVendasEstoque.br.com.projeto.view
                         Item.Qtd = int.Parse(linha["Qtd"].ToString());
                         Item.Subtotal = decimal.Parse(linha["Subtotal"].ToString());
 
+                        // baixa de estoque 
+                        qtd_estoque = produtoADao.RetornarEstoqueAtualProduto(Item.Produto_id);
+                        qtd_comprada = Item.Qtd;
+                        estoque_atualizado = qtd_estoque - qtd_comprada;
+
+                        produtoADao.BaixaEstoque(Item.Produto_id, estoque_atualizado);
+
                         ItemVendasDAO itemDAO = new ItemVendasDAO();
 
                         itemDAO.CadastrarItemdeVenda(Item);
@@ -74,6 +85,9 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
                         this.Dispose();
 
+                        new FrmVendas().Dispose(); 
+
+                        // esse aqui é para intaciar  
                         new FrmVendas().ShowDialog();   
                     }
                 }
@@ -83,7 +97,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
                 MessageBox.Show("Ocorreu um erro na sua venda");
             }
         }
-
         private void FrmPagamentos_Load(object sender, EventArgs e)
         {
             txttroco.Text = "0.00";
