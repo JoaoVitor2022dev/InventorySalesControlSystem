@@ -85,8 +85,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
                         this.Dispose();
 
-                        new FrmVendas().Dispose(); 
-
                         // esse aqui é para intaciar  
                         new FrmVendas().ShowDialog();   
                     }

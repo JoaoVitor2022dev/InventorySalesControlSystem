@@ -24,7 +24,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
         // Carrinho 
         DataTable carrinho = new DataTable();   
 
-
         public FrmVendas()
         {
             InitializeComponent();
@@ -37,15 +36,12 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             TabelaProdutos.DataSource = carrinho;
         }
-
         private void label4_Click(object sender, EventArgs e)
         {
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
-
         private void txtcpf_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -64,7 +60,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             }
         }
-
         private void txtcodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -83,7 +78,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
                 }
             }
         }
-
         private void btnadd_Click(object sender, EventArgs e)
         {
             try
@@ -114,7 +108,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
                 MessageBox.Show("Digite o codigo do produto");
             }
         }
-
         private void btnremover_Click(object sender, EventArgs e)
         {
             // botão remover item 
@@ -150,12 +143,10 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             tela.ShowDialog(); 
         }
-
         private void txtcpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
-
         private void FrmVendas_Load(object sender, EventArgs e)
         {
             TabelaProdutos.DefaultCellStyle.ForeColor = Color.Black;
