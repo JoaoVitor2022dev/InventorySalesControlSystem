@@ -40,5 +40,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             }
         }
         #endregion
+
+
     }
 }
