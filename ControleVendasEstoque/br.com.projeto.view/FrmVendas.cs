@@ -131,18 +131,23 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             MessageBox.Show("Item Removido do carrinho com sucesso!");
         }
-
         private void btnpagamento_Click(object sender, EventArgs e)
         {
-            // botoa de pagamento
-            DateTime dataAtual = DateTime.Parse(textdata.Text); 
+            // botao de pagamento
+            DateTime dataAtual = DateTime.Parse(textdata.Text);
 
             FrmPagamentos tela = new FrmPagamentos(carrinho, cliente, dataAtual);
 
             tela.txttotal.Text = total.ToString();
 
-            tela.ShowDialog(); 
+            this.Hide(); 
+
+            tela.ShowDialog();
+
+            this.Close(); 
         }
+
+
         private void txtcpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
