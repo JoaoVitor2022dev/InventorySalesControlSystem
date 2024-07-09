@@ -31,20 +31,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtInicio = new System.Windows.Forms.DateTimePicker();
-            this.dtFim = new System.Windows.Forms.DateTimePicker();
             this.btnpesquisaHistorico = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colCod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtFim = new System.Windows.Forms.DateTimePicker();
+            this.dtInicio = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabeelaHistorico = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabeelaHistorico)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,16 +81,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consulta";
             // 
-            // label3
+            // btnpesquisaHistorico
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(63, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Data Inicio:";
+            this.btnpesquisaHistorico.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnpesquisaHistorico.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnpesquisaHistorico.ForeColor = System.Drawing.Color.White;
+            this.btnpesquisaHistorico.Location = new System.Drawing.Point(734, 62);
+            this.btnpesquisaHistorico.Name = "btnpesquisaHistorico";
+            this.btnpesquisaHistorico.Size = new System.Drawing.Size(123, 43);
+            this.btnpesquisaHistorico.TabIndex = 10;
+            this.btnpesquisaHistorico.Text = "Pesquisar";
+            this.btnpesquisaHistorico.UseVisualStyleBackColor = false;
+            this.btnpesquisaHistorico.Click += new System.EventHandler(this.btnpesquisaHistorico_Click);
+            // 
+            // dtFim
+            // 
+            this.dtFim.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.dtFim.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtFim.Location = new System.Drawing.Point(484, 68);
+            this.dtFim.Name = "dtFim";
+            this.dtFim.Size = new System.Drawing.Size(200, 27);
+            this.dtFim.TabIndex = 9;
+            // 
+            // dtInicio
+            // 
+            this.dtInicio.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtInicio.Location = new System.Drawing.Point(165, 68);
+            this.dtInicio.Name = "dtInicio";
+            this.dtInicio.Size = new System.Drawing.Size(200, 27);
+            this.dtInicio.TabIndex = 8;
             // 
             // label2
             // 
@@ -108,102 +123,45 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Data Fim:";
             // 
-            // dtInicio
+            // label3
             // 
-            this.dtInicio.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtInicio.Location = new System.Drawing.Point(165, 68);
-            this.dtInicio.Name = "dtInicio";
-            this.dtInicio.Size = new System.Drawing.Size(200, 27);
-            this.dtInicio.TabIndex = 8;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(63, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 21);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Data Inicio:";
             // 
-            // dtFim
+            // tabeelaHistorico
             // 
-            this.dtFim.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.dtFim.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtFim.Location = new System.Drawing.Point(484, 68);
-            this.dtFim.Name = "dtFim";
-            this.dtFim.Size = new System.Drawing.Size(200, 27);
-            this.dtFim.TabIndex = 9;
-            // 
-            // btnpesquisaHistorico
-            // 
-            this.btnpesquisaHistorico.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnpesquisaHistorico.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btnpesquisaHistorico.ForeColor = System.Drawing.Color.White;
-            this.btnpesquisaHistorico.Location = new System.Drawing.Point(734, 62);
-            this.btnpesquisaHistorico.Name = "btnpesquisaHistorico";
-            this.btnpesquisaHistorico.Size = new System.Drawing.Size(123, 43);
-            this.btnpesquisaHistorico.TabIndex = 10;
-            this.btnpesquisaHistorico.Text = "Pesquisar";
-            this.btnpesquisaHistorico.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCod,
-            this.colData,
-            this.colCliente,
-            this.colTotal,
-            this.colObs});
-            this.dataGridView1.Location = new System.Drawing.Point(14, 349);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(883, 320);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // colCod
-            // 
-            this.colCod.HeaderText = "Código";
-            this.colCod.Name = "colCod";
-            this.colCod.ReadOnly = true;
-            // 
-            // colData
-            // 
-            this.colData.HeaderText = "Data da Venda";
-            this.colData.Name = "colData";
-            this.colData.ReadOnly = true;
-            this.colData.Width = 150;
-            // 
-            // colCliente
-            // 
-            this.colCliente.HeaderText = "Cliente";
-            this.colCliente.Name = "colCliente";
-            this.colCliente.ReadOnly = true;
-            this.colCliente.Width = 150;
-            // 
-            // colTotal
-            // 
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.ReadOnly = true;
-            // 
-            // colObs
-            // 
-            this.colObs.HeaderText = "Obs";
-            this.colObs.Name = "colObs";
-            this.colObs.ReadOnly = true;
-            this.colObs.Width = 350;
+            this.tabeelaHistorico.AllowUserToAddRows = false;
+            this.tabeelaHistorico.AllowUserToDeleteRows = false;
+            this.tabeelaHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabeelaHistorico.Location = new System.Drawing.Point(14, 349);
+            this.tabeelaHistorico.Name = "tabeelaHistorico";
+            this.tabeelaHistorico.ReadOnly = true;
+            this.tabeelaHistorico.Size = new System.Drawing.Size(883, 320);
+            this.tabeelaHistorico.TabIndex = 8;
+            this.tabeelaHistorico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // FrmHistorico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 681);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tabeelaHistorico);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "FrmHistorico";
             this.Text = "Histórico de Vendas ";
+            this.Load += new System.EventHandler(this.FrmHistorico_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabeelaHistorico)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,11 +176,6 @@
         private System.Windows.Forms.DateTimePicker dtInicio;
         private System.Windows.Forms.DateTimePicker dtFim;
         private System.Windows.Forms.Button btnpesquisaHistorico;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colObs;
+        private System.Windows.Forms.DataGridView tabeelaHistorico;
     }
 }
