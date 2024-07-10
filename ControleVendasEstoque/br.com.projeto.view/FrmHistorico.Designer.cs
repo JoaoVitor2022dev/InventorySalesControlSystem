@@ -138,6 +138,7 @@
             // 
             this.tabeelaHistorico.AllowUserToAddRows = false;
             this.tabeelaHistorico.AllowUserToDeleteRows = false;
+            this.tabeelaHistorico.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.tabeelaHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabeelaHistorico.Location = new System.Drawing.Point(14, 349);
             this.tabeelaHistorico.Name = "tabeelaHistorico";

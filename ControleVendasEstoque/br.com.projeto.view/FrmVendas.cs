@@ -147,7 +147,6 @@ namespace ControleVendasEstoque.br.com.projeto.view
             this.Close(); 
         }
 
-
         private void txtcpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
