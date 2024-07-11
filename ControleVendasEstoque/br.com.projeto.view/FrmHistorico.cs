@@ -42,5 +42,20 @@ namespace ControleVendasEstoque.br.com.projeto.view
             tabeelaHistorico.DataSource = dao.ListarVendas();
             tabeelaHistorico.DefaultCellStyle.ForeColor = Color.Black;
         }
+
+        private void tabeelaHistorico_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // 1 - primeiro passo - abrir outro formulario
+            FrmDetalhes Tela = new FrmDetalhes();
+
+            DateTime DataVenda = Convert.ToDateTime(tabeelaHistorico.CurrentRow.Cells[1].Value.ToString());
+
+            Tela.txtData.Text = DataVenda.ToString("dd/MM/yyyy");
+            Tela.txtcliente.Text = tabeelaHistorico.CurrentRow.Cells[2].Value.ToString();
+            Tela.txttotal.Text = tabeelaHistorico.CurrentRow.Cells[3].Value.ToString();
+            Tela.txtObs.Text = tabeelaHistorico.CurrentRow.Cells[4].Value.ToString();
+
+            Tela.ShowDialog(); 
+        }
     }
 }

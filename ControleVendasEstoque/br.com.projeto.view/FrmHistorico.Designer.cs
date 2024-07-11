@@ -145,6 +145,7 @@
             this.tabeelaHistorico.ReadOnly = true;
             this.tabeelaHistorico.Size = new System.Drawing.Size(883, 320);
             this.tabeelaHistorico.TabIndex = 8;
+            this.tabeelaHistorico.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabeelaHistorico_CellClick);
             this.tabeelaHistorico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // FrmHistorico
