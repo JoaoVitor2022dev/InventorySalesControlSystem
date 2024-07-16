@@ -2,6 +2,7 @@
 using ControleVendasEstoque.br.com.projeto.model;
 using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.dao
@@ -37,6 +38,52 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             catch (Exception err)
             {
                 MessageBox.Show($"Ocorreu um erro: {err}");
+            }
+        }
+        #endregion
+
+        #region Metodo que lista todos os itens por venda 
+        public DataTable ListarItensPorVenda(int id_venda)
+        {
+            try
+            {
+                //  criar um data table
+                DataTable TabelaItens = new DataTable();
+
+
+                // criar um comando SQL 
+                string sql = @"SELECT i.id        AS 'Código',
+                                      p.descricao AS 'Descrição', 
+                                      i.qtd       AS 'Quantidade', 
+                                      p.preco     AS 'Preço',
+                                      i.subtotal  AS 'SubTotal'
+                               FROM 
+                                      tb_itensvendas AS i
+                               JOIN 
+                                      tb_produtos AS p
+                                 ON 
+                                      i.produto_id = p.id
+                              WHERE 
+                                      i.venda_id = 10;";
+
+                // execuatr o comando sql 
+                MySqlCommand executecmdsql = new MySqlCommand(sql, conexao);
+                executecmdsql.Parameters.AddWithValue("@venda_id", id_venda );
+       
+
+                conexao.Open();
+                executecmdsql.ExecuteNonQuery();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(executecmdsql);
+                da.Fill(TabelaItens);
+
+                return TabelaItens;
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Erro ao executar o comando SQL: {err}");
+                return null;
             }
         }
         #endregion
