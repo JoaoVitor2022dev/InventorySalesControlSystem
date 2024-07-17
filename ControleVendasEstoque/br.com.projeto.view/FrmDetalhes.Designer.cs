@@ -191,6 +191,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmDetalhes";
             this.Text = "FrmDetalhes";
+            this.Load += new System.EventHandler(this.FrmDetalhes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

@@ -64,7 +64,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
                                  ON 
                                       i.produto_id = p.id
                               WHERE 
-                                      i.venda_id = 10;";
+                                      i.venda_id = @venda_id;";
 
                 // execuatr o comando sql 
                 MySqlCommand executecmdsql = new MySqlCommand(sql, conexao);

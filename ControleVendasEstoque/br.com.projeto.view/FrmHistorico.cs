@@ -1,12 +1,6 @@
 ﻿using ControleVendasEstoque.br.com.projeto.dao;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ControleVendasEstoque.br.com.projeto.view
@@ -46,7 +40,11 @@ namespace ControleVendasEstoque.br.com.projeto.view
         private void tabeelaHistorico_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // 1 - primeiro passo - abrir outro formulario
-            FrmDetalhes Tela = new FrmDetalhes();
+
+            // passar o id do venda 
+            int id_venda = int.Parse(tabeelaHistorico.CurrentRow.Cells[0].Value.ToString());
+
+            FrmDetalhes Tela = new FrmDetalhes(id_venda);
 
             DateTime DataVenda = Convert.ToDateTime(tabeelaHistorico.CurrentRow.Cells[1].Value.ToString());
 

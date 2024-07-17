@@ -116,7 +116,7 @@ namespace ControleVendasEstoque.br.com.projeto.dao
         }
         #endregion
 
-        #region Metodo de ListarVendasPorPeriodo
+        #region Metodo de ListarVendas
         public DataTable ListarVendas()
         {
             try
