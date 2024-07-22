@@ -142,6 +142,18 @@
     <Compile Include="br.com.projeto.view\FrmHistorico.Designer.cs">
       <DependentUpon>FrmHistorico.cs</DependentUpon>
     </Compile>
+    <Compile Include="br.com.projeto.view\Frmlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.projeto.view\Frmlogin.Designer.cs">
+      <DependentUpon>Frmlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="br.com.projeto.view\Frmmenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.projeto.view\Frmmenu.Designer.cs">
+      <DependentUpon>Frmmenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="br.com.projeto.view\FrmPagamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +195,12 @@
     <EmbeddedResource Include="br.com.projeto.view\FrmHistorico.resx">
       <DependentUpon>FrmHistorico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="br.com.projeto.view\Frmlogin.resx">
+      <DependentUpon>Frmlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.projeto.view\Frmmenu.resx">
+      <DependentUpon>Frmmenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="br.com.projeto.view\FrmPagamentos.resx">
       <DependentUpon>FrmPagamentos.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +221,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -218,6 +237,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\211670_b_gear_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\465074_cart_purchase_shopping_basket_buy_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2530821_business man_employee_general_human_member_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4308184_client_costs_employee_finance_money_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6843036_courier_deliver_delivery_package_product_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4172394_goods_merchandise_stock_supply_vendibles_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-menu.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
