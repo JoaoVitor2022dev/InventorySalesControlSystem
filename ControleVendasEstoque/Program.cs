@@ -14,7 +14,7 @@ namespace ControleVendasEstoque
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMenu());
+            Application.Run(new Frmlogin());
         }
     }
 }

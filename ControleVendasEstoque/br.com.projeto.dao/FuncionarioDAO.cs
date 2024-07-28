@@ -216,5 +216,41 @@ namespace ControleVendasEstoque.br.com.projeto.dao
             }
         }
         #endregion
+
+        #region Método de efetuar Login 
+        public bool EfetuarLogin(string email, string senha) 
+        {
+            try
+            {
+                string sql = "SELECT * FROM tb_funcionarios WHERE email = @email AND senha = @senha";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@email", email);
+                executacmd.Parameters.AddWithValue("@senha", senha);
+
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+
+                if (reader.Read())
+                {
+                    MessageBox.Show("Login realizado com sucesso!");
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("E-mail ou senha incorreto!");
+                    return false;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show($"Ocorreu um erro: {err}");
+                return false;
+            }
+        }
+
+        #endregion
     }
 }
