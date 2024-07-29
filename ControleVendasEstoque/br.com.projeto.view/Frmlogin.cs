@@ -28,9 +28,7 @@ namespace ControleVendasEstoque.br.com.projeto.view
 
             if (dao.EfetuarLogin(email,senha) == true)
             {
-                FrmMenu TelaMenu = new FrmMenu();
-                TelaMenu.Show();
-                this.Hide(); 
+                this.Hide();
             }
         }
     }

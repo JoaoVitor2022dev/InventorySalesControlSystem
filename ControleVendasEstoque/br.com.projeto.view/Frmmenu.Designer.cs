@@ -89,13 +89,13 @@
             // txtmenuclientecadastrar
             // 
             this.txtmenuclientecadastrar.Name = "txtmenuclientecadastrar";
-            this.txtmenuclientecadastrar.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuclientecadastrar.Size = new System.Drawing.Size(165, 22);
             this.txtmenuclientecadastrar.Text = "Cadastrar Cliente";
             // 
             // txtmenuclienteconsulta
             // 
             this.txtmenuclienteconsulta.Name = "txtmenuclienteconsulta";
-            this.txtmenuclienteconsulta.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuclienteconsulta.Size = new System.Drawing.Size(165, 22);
             this.txtmenuclienteconsulta.Text = "Consultar Cliente";
             // 
             // Clientfuncionario
@@ -181,13 +181,13 @@
             // txtmenuNovaVenda
             // 
             this.txtmenuNovaVenda.Name = "txtmenuNovaVenda";
-            this.txtmenuNovaVenda.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuNovaVenda.Size = new System.Drawing.Size(162, 22);
             this.txtmenuNovaVenda.Text = "Nova Vendas";
             // 
             // txtmenuHistoricoVenda
             // 
             this.txtmenuHistoricoVenda.Name = "txtmenuHistoricoVenda";
-            this.txtmenuHistoricoVenda.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuHistoricoVenda.Size = new System.Drawing.Size(162, 22);
             this.txtmenuHistoricoVenda.Text = "Histórico Vendas";
             // 
             // configuração
@@ -204,13 +204,13 @@
             // txtmenuTrocaUsuario
             // 
             this.txtmenuTrocaUsuario.Name = "txtmenuTrocaUsuario";
-            this.txtmenuTrocaUsuario.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuTrocaUsuario.Size = new System.Drawing.Size(165, 22);
             this.txtmenuTrocaUsuario.Text = "Trocar de Usuário";
             // 
             // txtmenuSairSistema
             // 
             this.txtmenuSairSistema.Name = "txtmenuSairSistema";
-            this.txtmenuSairSistema.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuSairSistema.Size = new System.Drawing.Size(165, 22);
             this.txtmenuSairSistema.Text = "Sair do Sistema";
             // 
             // statusStrip1
@@ -298,7 +298,6 @@
         private System.Windows.Forms.ToolStripMenuItem MenuFornecedor;
         private System.Windows.Forms.ToolStripMenuItem txtmenuFuncionarioCadastrar;
         private System.Windows.Forms.ToolStripMenuItem txtmenufuncionarioconsulta;
-        private System.Windows.Forms.ToolStripMenuItem MenuProdutos;
         private System.Windows.Forms.ToolStripMenuItem MenuVendas;
         private System.Windows.Forms.ToolStripMenuItem configuração;
         private System.Windows.Forms.ToolStripMenuItem txtmenuFornecedorCadastrar;
@@ -317,5 +316,6 @@
         private System.Windows.Forms.ToolStripStatusLabel txthora;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private System.Windows.Forms.ToolStripStatusLabel txtusuario;
+        public System.Windows.Forms.ToolStripMenuItem MenuProdutos;
     }
 }

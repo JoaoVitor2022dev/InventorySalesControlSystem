@@ -1,5 +1,6 @@
 ﻿using ControleVendasEstoque.br.com.projeto.conexao;
 using ControleVendasEstoque.br.com.projeto.model;
+using ControleVendasEstoque.br.com.projeto.view;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -235,7 +236,24 @@ namespace ControleVendasEstoque.br.com.projeto.dao
 
                 if (reader.Read())
                 {
-                    MessageBox.Show("Login realizado com sucesso!");
+                    string nivel = reader.GetString("nivel_acesso");
+                    string nome = reader.GetString("nome");
+
+                    MessageBox.Show($"Bem vindo {nome} - Acesso de {nivel}");
+
+                    FrmMenu TelaMenu = new FrmMenu();
+
+                    if (nivel.Equals("Administrador"))
+                    {
+                        TelaMenu.Show();
+                    }
+                    else if (nivel.Equals("Usuário"))
+                    {
+                        // personalizar o que o vendedorvai ter acesso 
+                        TelaMenu.MenuProdutos.Visible = false;
+                        TelaMenu.Show();
+                    }
+
                     return true;
                 }
                 else
