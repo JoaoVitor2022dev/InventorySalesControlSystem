@@ -243,6 +243,8 @@ namespace ControleVendasEstoque.br.com.projeto.dao
 
                     FrmMenu TelaMenu = new FrmMenu();
 
+                    TelaMenu.txtusuario.Text = nome;  
+
                     if (nivel.Equals("Administrador"))
                     {
                         TelaMenu.Show();

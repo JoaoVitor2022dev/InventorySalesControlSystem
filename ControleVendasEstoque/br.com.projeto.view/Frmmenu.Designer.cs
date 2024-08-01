@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Menucliente = new System.Windows.Forms.ToolStripMenuItem();
             this.txtmenuclientecadastrar = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +56,7 @@
             this.txthora = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtusuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -89,14 +91,16 @@
             // txtmenuclientecadastrar
             // 
             this.txtmenuclientecadastrar.Name = "txtmenuclientecadastrar";
-            this.txtmenuclientecadastrar.Size = new System.Drawing.Size(165, 22);
+            this.txtmenuclientecadastrar.Size = new System.Drawing.Size(180, 22);
             this.txtmenuclientecadastrar.Text = "Cadastrar Cliente";
+            this.txtmenuclientecadastrar.Click += new System.EventHandler(this.txtmenuclientecadastrar_Click);
             // 
             // txtmenuclienteconsulta
             // 
             this.txtmenuclienteconsulta.Name = "txtmenuclienteconsulta";
-            this.txtmenuclienteconsulta.Size = new System.Drawing.Size(165, 22);
+            this.txtmenuclienteconsulta.Size = new System.Drawing.Size(180, 22);
             this.txtmenuclienteconsulta.Text = "Consultar Cliente";
+            this.txtmenuclienteconsulta.Click += new System.EventHandler(this.txtmenuclienteconsulta_Click);
             // 
             // Clientfuncionario
             // 
@@ -114,12 +118,14 @@
             this.txtmenuFuncionarioCadastrar.Name = "txtmenuFuncionarioCadastrar";
             this.txtmenuFuncionarioCadastrar.Size = new System.Drawing.Size(191, 22);
             this.txtmenuFuncionarioCadastrar.Text = "Cadastrar Funcionário";
+            this.txtmenuFuncionarioCadastrar.Click += new System.EventHandler(this.txtmenuFuncionarioCadastrar_Click);
             // 
             // txtmenufuncionarioconsulta
             // 
             this.txtmenufuncionarioconsulta.Name = "txtmenufuncionarioconsulta";
             this.txtmenufuncionarioconsulta.Size = new System.Drawing.Size(191, 22);
             this.txtmenufuncionarioconsulta.Text = "Consultar Funcionário";
+            this.txtmenufuncionarioconsulta.Click += new System.EventHandler(this.txtmenufuncionarioconsulta_Click);
             // 
             // MenuFornecedor
             // 
@@ -137,12 +143,14 @@
             this.txtmenuFornecedorCadastrar.Name = "txtmenuFornecedorCadastrar";
             this.txtmenuFornecedorCadastrar.Size = new System.Drawing.Size(188, 22);
             this.txtmenuFornecedorCadastrar.Text = "Cadastrar Fornecedor";
+            this.txtmenuFornecedorCadastrar.Click += new System.EventHandler(this.txtmenuFornecedorCadastrar_Click);
             // 
             // txtmenuFornecedorConsulta
             // 
             this.txtmenuFornecedorConsulta.Name = "txtmenuFornecedorConsulta";
             this.txtmenuFornecedorConsulta.Size = new System.Drawing.Size(188, 22);
             this.txtmenuFornecedorConsulta.Text = "Consultar Fornecedor";
+            this.txtmenuFornecedorConsulta.Click += new System.EventHandler(this.txtmenuFornecedorConsulta_Click);
             // 
             // MenuProdutos
             // 
@@ -160,12 +168,14 @@
             this.txtmenuProdutoCadastrar.Name = "txtmenuProdutoCadastrar";
             this.txtmenuProdutoCadastrar.Size = new System.Drawing.Size(180, 22);
             this.txtmenuProdutoCadastrar.Text = "Cadastrar Produtos";
+            this.txtmenuProdutoCadastrar.Click += new System.EventHandler(this.txtmenuProdutoCadastrar_Click);
             // 
             // txtmenuProdutoConsultar
             // 
             this.txtmenuProdutoConsultar.Name = "txtmenuProdutoConsultar";
             this.txtmenuProdutoConsultar.Size = new System.Drawing.Size(180, 22);
             this.txtmenuProdutoConsultar.Text = "Consultar Produtos";
+            this.txtmenuProdutoConsultar.Click += new System.EventHandler(this.txtmenuProdutoConsultar_Click);
             // 
             // MenuVendas
             // 
@@ -181,14 +191,16 @@
             // txtmenuNovaVenda
             // 
             this.txtmenuNovaVenda.Name = "txtmenuNovaVenda";
-            this.txtmenuNovaVenda.Size = new System.Drawing.Size(162, 22);
+            this.txtmenuNovaVenda.Size = new System.Drawing.Size(180, 22);
             this.txtmenuNovaVenda.Text = "Nova Vendas";
+            this.txtmenuNovaVenda.Click += new System.EventHandler(this.txtmenuNovaVenda_Click);
             // 
             // txtmenuHistoricoVenda
             // 
             this.txtmenuHistoricoVenda.Name = "txtmenuHistoricoVenda";
-            this.txtmenuHistoricoVenda.Size = new System.Drawing.Size(162, 22);
+            this.txtmenuHistoricoVenda.Size = new System.Drawing.Size(180, 22);
             this.txtmenuHistoricoVenda.Text = "Histórico Vendas";
+            this.txtmenuHistoricoVenda.Click += new System.EventHandler(this.txtmenuHistoricoVenda_Click);
             // 
             // configuração
             // 
@@ -238,8 +250,9 @@
             // 
             // txtdata
             // 
+            this.txtdata.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdata.Name = "txtdata";
-            this.txtdata.Size = new System.Drawing.Size(65, 17);
+            this.txtdata.Size = new System.Drawing.Size(73, 17);
             this.txtdata.Text = "21/07/2024";
             // 
             // toolStripStatusLabel3
@@ -250,8 +263,9 @@
             // 
             // txthora
             // 
+            this.txthora.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txthora.Name = "txthora";
-            this.txthora.Size = new System.Drawing.Size(34, 17);
+            this.txthora.Size = new System.Drawing.Size(38, 17);
             this.txthora.Text = "10:30";
             // 
             // toolStripStatusLabel5
@@ -262,9 +276,15 @@
             // 
             // txtusuario
             // 
+            this.txtusuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(59, 17);
+            this.txtusuario.Size = new System.Drawing.Size(63, 17);
             this.txtusuario.Text = "João Vitor";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmMenu
             // 
@@ -315,7 +335,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel txthora;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.ToolStripStatusLabel txtusuario;
         public System.Windows.Forms.ToolStripMenuItem MenuProdutos;
+        public System.Windows.Forms.ToolStripStatusLabel txtusuario;
+        private System.Windows.Forms.Timer timer1;
     }
 }

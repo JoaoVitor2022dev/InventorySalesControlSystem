@@ -359,7 +359,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tabProdutos;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox txtqtd;
         private System.Windows.Forms.Label label5;
@@ -367,7 +366,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtcodigo;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView TabelaProdutos;
         private System.Windows.Forms.Button txtpesquisar;
         private System.Windows.Forms.TextBox txtconsulta;
@@ -381,5 +379,7 @@
         private System.Windows.Forms.ComboBox cbfornecedor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TabControl tabProdutos;
+        public System.Windows.Forms.TabPage tabPage2;
     }
 }

@@ -618,9 +618,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabControl tabClientes;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtcodigo;
@@ -656,9 +653,12 @@
         private System.Windows.Forms.Button txteditar;
         private System.Windows.Forms.TextBox txtconsulta;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DataGridView TabelaCliente;
         private System.Windows.Forms.Button txtpesquisar;
         private System.Windows.Forms.TextBox txtcidade;
         private System.Windows.Forms.Button btnbuscar;
+        public System.Windows.Forms.TabControl tabClientes;
+        public System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.DataGridView TabelaCliente;
+        public System.Windows.Forms.TabPage tabPage2;
     }
 }

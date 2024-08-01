@@ -548,7 +548,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(963, 363);
+            this.tabPage2.Size = new System.Drawing.Size(963, 354);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -678,7 +678,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tabFuncionario;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.ComboBox txtnivel;
@@ -708,7 +707,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtcodigo;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView TabelaFuncionarios;
         private System.Windows.Forms.Button txtpesquisar;
         private System.Windows.Forms.TextBox txtconsulta;
@@ -725,5 +723,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox txtuf;
         private System.Windows.Forms.Label label20;
+        public System.Windows.Forms.TabControl tabFuncionario;
+        public System.Windows.Forms.TabPage tabPage2;
     }
 }
