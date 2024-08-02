@@ -46,7 +46,6 @@
             this.txtmenuNovaVenda = new System.Windows.Forms.ToolStripMenuItem();
             this.txtmenuHistoricoVenda = new System.Windows.Forms.ToolStripMenuItem();
             this.configuração = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtmenuTrocaUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.txtmenuSairSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -73,7 +72,8 @@
             this.configuração});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(999, 56);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1332, 56);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,14 +91,14 @@
             // txtmenuclientecadastrar
             // 
             this.txtmenuclientecadastrar.Name = "txtmenuclientecadastrar";
-            this.txtmenuclientecadastrar.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuclientecadastrar.Size = new System.Drawing.Size(165, 22);
             this.txtmenuclientecadastrar.Text = "Cadastrar Cliente";
             this.txtmenuclientecadastrar.Click += new System.EventHandler(this.txtmenuclientecadastrar_Click);
             // 
             // txtmenuclienteconsulta
             // 
             this.txtmenuclienteconsulta.Name = "txtmenuclienteconsulta";
-            this.txtmenuclienteconsulta.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuclienteconsulta.Size = new System.Drawing.Size(165, 22);
             this.txtmenuclienteconsulta.Text = "Consultar Cliente";
             this.txtmenuclienteconsulta.Click += new System.EventHandler(this.txtmenuclienteconsulta_Click);
             // 
@@ -166,14 +166,14 @@
             // txtmenuProdutoCadastrar
             // 
             this.txtmenuProdutoCadastrar.Name = "txtmenuProdutoCadastrar";
-            this.txtmenuProdutoCadastrar.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuProdutoCadastrar.Size = new System.Drawing.Size(176, 22);
             this.txtmenuProdutoCadastrar.Text = "Cadastrar Produtos";
             this.txtmenuProdutoCadastrar.Click += new System.EventHandler(this.txtmenuProdutoCadastrar_Click);
             // 
             // txtmenuProdutoConsultar
             // 
             this.txtmenuProdutoConsultar.Name = "txtmenuProdutoConsultar";
-            this.txtmenuProdutoConsultar.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuProdutoConsultar.Size = new System.Drawing.Size(176, 22);
             this.txtmenuProdutoConsultar.Text = "Consultar Produtos";
             this.txtmenuProdutoConsultar.Click += new System.EventHandler(this.txtmenuProdutoConsultar_Click);
             // 
@@ -191,21 +191,20 @@
             // txtmenuNovaVenda
             // 
             this.txtmenuNovaVenda.Name = "txtmenuNovaVenda";
-            this.txtmenuNovaVenda.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuNovaVenda.Size = new System.Drawing.Size(162, 22);
             this.txtmenuNovaVenda.Text = "Nova Vendas";
             this.txtmenuNovaVenda.Click += new System.EventHandler(this.txtmenuNovaVenda_Click);
             // 
             // txtmenuHistoricoVenda
             // 
             this.txtmenuHistoricoVenda.Name = "txtmenuHistoricoVenda";
-            this.txtmenuHistoricoVenda.Size = new System.Drawing.Size(180, 22);
+            this.txtmenuHistoricoVenda.Size = new System.Drawing.Size(162, 22);
             this.txtmenuHistoricoVenda.Text = "Histórico Vendas";
             this.txtmenuHistoricoVenda.Click += new System.EventHandler(this.txtmenuHistoricoVenda_Click);
             // 
             // configuração
             // 
             this.configuração.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.txtmenuTrocaUsuario,
             this.txtmenuSairSistema});
             this.configuração.Image = global::ControleVendasEstoque.Properties.Resources._211670_b_gear_icon;
             this.configuração.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -213,17 +212,12 @@
             this.configuração.Size = new System.Drawing.Size(144, 52);
             this.configuração.Text = "Configurações";
             // 
-            // txtmenuTrocaUsuario
-            // 
-            this.txtmenuTrocaUsuario.Name = "txtmenuTrocaUsuario";
-            this.txtmenuTrocaUsuario.Size = new System.Drawing.Size(165, 22);
-            this.txtmenuTrocaUsuario.Text = "Trocar de Usuário";
-            // 
             // txtmenuSairSistema
             // 
             this.txtmenuSairSistema.Name = "txtmenuSairSistema";
-            this.txtmenuSairSistema.Size = new System.Drawing.Size(165, 22);
+            this.txtmenuSairSistema.Size = new System.Drawing.Size(180, 22);
             this.txtmenuSairSistema.Text = "Sair do Sistema";
+            this.txtmenuSairSistema.Click += new System.EventHandler(this.txtmenuSairSistema_Click);
             // 
             // statusStrip1
             // 
@@ -235,9 +229,10 @@
             this.txthora,
             this.toolStripStatusLabel5,
             this.txtusuario});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 607);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 752);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(999, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1332, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -288,14 +283,15 @@
             // 
             // FrmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ControleVendasEstoque.Properties.Resources.logo_menu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(999, 629);
+            this.ClientSize = new System.Drawing.Size(1332, 774);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMenu";
             this.Text = "Menu Principal - Controle de Vendas";
             this.Load += new System.EventHandler(this.FrmMenu_Load);
@@ -326,7 +322,6 @@
         private System.Windows.Forms.ToolStripMenuItem txtmenuProdutoConsultar;
         private System.Windows.Forms.ToolStripMenuItem txtmenuNovaVenda;
         private System.Windows.Forms.ToolStripMenuItem txtmenuHistoricoVenda;
-        private System.Windows.Forms.ToolStripMenuItem txtmenuTrocaUsuario;
         private System.Windows.Forms.ToolStripMenuItem txtmenuSairSistema;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.StatusStrip statusStrip1;

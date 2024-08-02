@@ -102,5 +102,16 @@ namespace ControleVendasEstoque.br.com.projeto.view
             FrmHistorico Tela = new FrmHistorico();   
             Tela.ShowDialog();
         }
+
+        private void txtmenuSairSistema_Click(object sender, EventArgs e)
+        {
+            DialogResult Result = MessageBox.Show("Você deseja sair?", "ATENÇÃO!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (Result == DialogResult.Yes)
+            {
+                // Apertou para sair 
+                Application.Exit();
+            }
+        }
     }
 }
